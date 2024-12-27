@@ -9,12 +9,9 @@ const DashboardSidebar = () => {
   const [selectLink, setselectLink] = useState("benefits");
   return (
     <>
-      <Link
-        to="/dashboard"
-        className="flex items-center text-xl lg:text-4xl font-semibold"
-      >
-        <CgMenuGridR className="text-4xl text-black me-1" />
-        <span className="hidden lg:block text-black">Dashboard</span>
+      <Link to="/benefits" className="flex items-center font-semibold">
+        <CgMenuGridR className="text-3xl text-black me-1" />
+        <span className="hidden lg:block text-3xl text-black">Dashboard</span>
       </Link>
       <ul className="mt-10 flex items-center justify-center flex-col lg:items-start">
         {DashBoardLinks.map((item) => {
@@ -24,7 +21,7 @@ const DashboardSidebar = () => {
           return (
             <Link
               onClick={() => setselectLink(item.path)}
-              className={`flex items-center w-full p-2 rounded-md  text-2xl mb-5 lg:border-b
+              className={`flex items-center w-full p-2 rounded-md text-xl mb-3 lg:border-b
                  border-gray-300 hover:border-yellow-200 hover:bg-Orange_70 hover:text-black transition
                  ${
                    item.path == selectLink

@@ -1,11 +1,11 @@
 .header {
-  height: 100px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
   border-bottom: 4px solid rgb(144, 144, 144);
-  /* background-color: rgb(227, 225, 225); */
+  background-color: #fff5f0;
   position: relative;
 }
 .navbar {
@@ -14,8 +14,6 @@
   align-items: center;
 }
 .logo {
-  display: flex;
-  align-items: center;
   font-size: 30px;
   font-weight: bold;
   color: #FF8D4C;
@@ -26,7 +24,7 @@
   font-weight: bold;
   color: #202121;
   cursor: pointer;
-  display: none;
+  /* display: none; */
 }
 .navLinks {
   margin-left: 30px;
@@ -47,7 +45,7 @@
   color: white;
   border-radius: 10px;
   padding: 5px 10px;
-  font-size: 21px;
+  font-size: 37px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -58,13 +56,8 @@
 .navLink:hover {
   color: darkblue;
 }
-@media (max-width: 840px) {
-  .logo {
-    display: none;
-  }
-  .menu {
-    display: block;
-  }
+@media (max-width: 640px) {
+  
   .navLinksWrapper {
     position: absolute;
     left: 0;
