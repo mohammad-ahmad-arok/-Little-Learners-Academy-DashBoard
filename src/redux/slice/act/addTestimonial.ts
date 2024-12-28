@@ -9,7 +9,6 @@ const addTestimonail = createAsyncThunk(
         const res = await axios.post(
           "http://localhost:5000/api/testimonials",data
         );
-        console.log(res.data)
   
         return res.data;
       } catch (error) {

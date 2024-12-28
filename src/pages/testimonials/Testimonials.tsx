@@ -60,7 +60,7 @@ const Testimonials: React.FC = () => {
               id={testimonial._id}
               image={testimonial.image}
               description={testimonial.description}
-              evaluation={testimonial.evaluation}
+              evaluation={testimonial.evaluation as number}
               name={testimonial.name}
             />
           </div>

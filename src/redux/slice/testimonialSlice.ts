@@ -13,7 +13,7 @@ export interface TTestimonial {
   name: string;
   image: string;
   description: string;
-  evaluation: number;
+  evaluation?: number;
 }
 
 type TState = {
@@ -59,7 +59,7 @@ const testimonialSlice = createSlice({
     builder.addCase(addTestimonail.fulfilled, (state, action) => {
       state.isLoading = "Success";
       state.error = null;
-      state.testimonials.push(action.payload);
+      state.testimonials=state.testimonials.push(action.payload);
     });
     builder.addCase(addTestimonail.rejected, (state,action) => {
       state.isLoading = "Fail";

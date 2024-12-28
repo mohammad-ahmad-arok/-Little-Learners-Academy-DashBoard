@@ -46,7 +46,6 @@ const TestimonialForm: React.FC = () => {
     _id:"",
     image:"",
     name:"",
-    evaluation:0,
     description:"",
    }];
  
@@ -77,7 +76,7 @@ const TestimonialForm: React.FC = () => {
   // Function To Handle Submit  
   const onSubmit: SubmitHandler<Inputs> = (data) =>{
     const form=new FormData();
-    if(typeof watch("image")!=="undefined"){
+    if(watch("image").length>0){
       form.append("image",data.image[0])
     }
     form.append("name",data.name);
