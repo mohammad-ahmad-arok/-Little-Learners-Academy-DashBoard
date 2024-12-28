@@ -7,7 +7,7 @@ const addTestimonail = createAsyncThunk(
       const { rejectWithValue } = thunkAPI;
       try {
         const res = await axios.post(
-          "http://localhost:5000/api/testimonials",data
+          "/api/testimonials",data
         );
   
         return res.data;

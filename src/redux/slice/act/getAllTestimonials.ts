@@ -7,7 +7,7 @@ const getAllTestimonials = createAsyncThunk(
       const { rejectWithValue } = thunkAPI;
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/testimonials"
+          "/api/testimonials"
         );
   
         return res.data;

@@ -7,7 +7,7 @@ const deleteTestimonial = createAsyncThunk(
       const { rejectWithValue } = thunkAPI;
       try {
         const res = await axios.delete(
-          `http://localhost:5000/api/testimonials/${id}`,
+          `/api/testimonials/${id}`,
         );
         console.log(res.data)
   
