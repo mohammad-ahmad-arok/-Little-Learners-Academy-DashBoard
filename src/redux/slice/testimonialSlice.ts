@@ -72,11 +72,9 @@ const testimonialSlice = createSlice({
     builder.addCase(updateTestimonial.fulfilled, (state, action) => {
       state.isLoading = "Success";
       state.error = null;
-     state.testimonials.forEach((testimonial)=>{
-        if(testimonial._id===action.payload._id) {
-          testimonial=action.payload;
-        }
-      })
+      state.testimonials = state.testimonials.map((testimonial) =>
+        testimonial._id === action.payload._id ? action.payload : testimonial
+      );
     });
     builder.addCase(updateTestimonial.rejected, (state,action) => {
       state.isLoading = "Fail";

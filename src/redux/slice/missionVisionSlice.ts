@@ -70,11 +70,9 @@ const missionVisionSlice = createSlice({
     builder.addCase(updateMssionVision.fulfilled, (state, action) => {
       state.isLoading = "Success";
       state.error = null;
-     state.records.forEach((record)=>{
-        if(record.title===action.payload.title) {
-          record=action.payload;
-        }
-      })
+      state.records = state.records.map((record) =>
+        record._id === action.payload._id ? action.payload : record
+      );
     });
     builder.addCase(updateMssionVision.rejected, (state,action) => {
       state.isLoading = "Fail";

@@ -63,7 +63,6 @@ const MissionVisionForm: React.FC = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
     
   } = useForm<Inputs>();
@@ -78,7 +77,7 @@ const MissionVisionForm: React.FC = () => {
      }
      else{
        toast.success("done")
-      //  navigate("/mission-vision")
+       navigate("/mission-vision")
      }
    }
 
@@ -91,7 +90,7 @@ const MissionVisionForm: React.FC = () => {
      else{
        toast.success("done")
        
-      //  navigate("/mission-vision")
+       navigate("/mission-vision")
      }
    }
   }

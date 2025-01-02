@@ -90,7 +90,7 @@ const TestimonialForm: React.FC = () => {
      }
      else{
        toast.success("done")
-      //  navigate("/testimonials")
+       navigate("/testimonials")
      }
    }
 
@@ -102,7 +102,7 @@ const TestimonialForm: React.FC = () => {
      }
      else{
        toast.success("done")
-      //  navigate("/testimonials")
+       navigate("/testimonials")
      }
    }
   }
