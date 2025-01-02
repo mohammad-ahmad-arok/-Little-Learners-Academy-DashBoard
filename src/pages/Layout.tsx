@@ -9,7 +9,7 @@ const DashBoardLayout = () => {
       <DashboardNav />
       <Toaster/>
       <div className="overflow-height flex items-start justify-between overflow-hidden">
-        <div className="overflow-height w-15 lg:w-1/5 bg-primary text-white p-1 lg:p-5">
+        <div className="overflow-height lg:w-1/7 hidden sm:block bg-[#ff5d00] text-white p-1 lg:p-5">
           <DashboardSidebar />
         </div>
         <div className="overflow-height w-full lg:w-4/5 overflow-y-scroll bg-white    ">

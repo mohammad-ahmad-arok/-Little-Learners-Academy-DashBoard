@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import faqs from "../slice/faqSlice"
 
 import testimonialSlice from "../slice/testimonialSlice"
 
-export const store=configureStore({reducer:{testimonialSlice}})
+export const store=configureStore({reducer:{testimonialSlice,faqs}})
+
 
 
 
