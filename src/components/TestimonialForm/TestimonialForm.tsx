@@ -44,7 +44,6 @@ const TestimonialForm: React.FC = () => {
   // Array For Saving Data About One Testimonial By Id
   let testimonialDetail:TarrayTestimonail[]=[{
     _id:"",
-    image:"",
     name:"",
     description:"",
    }];
@@ -91,7 +90,7 @@ const TestimonialForm: React.FC = () => {
      }
      else{
        toast.success("done")
-       navigate("/testimonials")
+      //  navigate("/testimonials")
      }
    }
 
@@ -103,7 +102,7 @@ const TestimonialForm: React.FC = () => {
      }
      else{
        toast.success("done")
-       navigate("/testimonials")
+      //  navigate("/testimonials")
      }
    }
   }

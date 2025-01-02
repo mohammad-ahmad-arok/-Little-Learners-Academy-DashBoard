@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 
 // Components
-import TestimonialsCard from "../../components/TestimonialsCard/TestimonialsCard";
+import CardMissionVision from "../../components/CardMissionVision/CardMissionVision";
+
 import ButtonSpinner from "../../components/buttonSpinner/ButtonSpinner";
 
 // Thunks
 
-import { getAllTestimonials } from "../../redux/slice/testimonialSlice";
+import { getAllMissionVision } from "../../redux/slice/missionVisionSlice";
 
 // Styles
 import styles from "../../components/dashboardNav/header.module.css";
@@ -21,21 +22,21 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 
 
-const Testimonials: React.FC = () => {
+const MissionVision: React.FC = () => {
   const navigate=useNavigate();
   const dispatch=useAppDispatch();
 
   // Info From Slice 
-  const {testimonials,isLoading,error}=useAppSelector(state=>state.testimonialSlice)
+  const {records,isLoading,error}=useAppSelector(state=>state.missionVision)
   
   // Function To Navigate To Add Page
  const clickedHandler=()=>{
-  navigate("/testimonials/add")
+  navigate("/mission-vision/add")
  }
 
 // For Fetching All Testimonials From Slice 
  useEffect(()=>{
-    dispatch(getAllTestimonials());
+    dispatch(getAllMissionVision());
  },[dispatch])
  
   
@@ -53,15 +54,13 @@ const Testimonials: React.FC = () => {
     <button className={`${styles.btn} mb-4`} onClick={clickedHandler}>
       ADD NEW
     </button>
-      {testimonials.length>0? testimonials?.map((testimonial,index) => {
+      {records.length>0? records?.map((record,index) => {
         return (
           <div className="mb-6" key={index}>
-            <TestimonialsCard
-              id={testimonial._id}
-              image={testimonial.image!.url}
-              description={testimonial.description}
-              evaluation={testimonial.evaluation as number}
-              name={testimonial.name}
+            <CardMissionVision
+              id={record._id as string}
+              description={record.description}
+              title={record.title}
             />
           </div>
         );
@@ -73,4 +72,4 @@ const Testimonials: React.FC = () => {
   );
 };
 
-export default Testimonials;
+export default MissionVision;

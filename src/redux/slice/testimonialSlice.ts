@@ -11,7 +11,7 @@ import deleteTestimonial from "./act/deleteTestimonial";
 export interface TTestimonial {
   _id?: string;
   name: string;
-  image: string;
+  image?: {url:string,public_id:string};
   description: string;
   evaluation?: number;
 }
@@ -59,7 +59,7 @@ const testimonialSlice = createSlice({
     builder.addCase(addTestimonail.fulfilled, (state, action) => {
       state.isLoading = "Success";
       state.error = null;
-      state.testimonials=state.testimonials.push(action.payload);
+      state.testimonials.push(action.payload);
     });
     builder.addCase(addTestimonail.rejected, (state,action) => {
       state.isLoading = "Fail";
