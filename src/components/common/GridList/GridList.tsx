@@ -1,4 +1,6 @@
 import React from "react"
+import Lottie from "lottie-react"
+import notfound from "./not found.json"
 
 type TGridListProps<T>={
     records:T[],
@@ -12,7 +14,7 @@ const GridList = <T,>({records,renderItems}:TGridListProps<T>) => {
             {renderItems(record)}
           </div>
         );
-      }):<h1 className="flex justify-center items-center flex-col mt-20 font-bold text-5xl text-red-500">Data Not Found</h1>
+      }):<Lottie animationData={notfound} style={{width:"400px"}} className="m-auto mt-10"/>
   return (
     <div>{List}</div>
   )
