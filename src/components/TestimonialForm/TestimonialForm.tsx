@@ -163,7 +163,7 @@ const TestimonialForm: React.FC = () => {
           )}
         </div>
         <button type="submit" className="submit-button">
-          {typeof id == "string" ? "UPDATE" : "ADD"}
+          {isUpdateMode? "UPDATE" : "ADD"}
         </button>
       </form>
     </Loading>

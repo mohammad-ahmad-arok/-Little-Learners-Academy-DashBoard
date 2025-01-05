@@ -133,7 +133,7 @@ const MissionVisionForm: React.FC = () => {
           )}
         </div>
         <button type="submit" className="submit-button">
-          {typeof Ptitle == "string" ? "UPDATE" : "ADD"}
+          {isUpdateMode ? "UPDATE" : "ADD"}
         </button>
       </form>
     </Loading>
