@@ -13,7 +13,7 @@ export interface TTestimonial {
   name: string;
   image?: {url:string,public_id:string};
   description: string;
-  evaluation?: number;
+  evaluation?: string;
 }
 
 type TState = {
