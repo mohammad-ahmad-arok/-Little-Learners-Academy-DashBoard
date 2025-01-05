@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 // Thunk
-import { deleteMissionVision } from "../../redux/slice/missionVisionSlice"; 
+import { deleteMissionVision } from "../../redux/slice/mission-vision/missionVisionSlice"; 
 
 // Component
 import Modal from "../Modal/Modal";
@@ -64,26 +64,7 @@ const CardMissionVision:React.FC<TPropsCard> = ({title,description,id}) => {
         <h2 className="font-bold text-5xl">{title}</h2>
       </div>
       <p className="mt-12 3xl:text-lg">{description}</p>
-
-      <Modal open={open} onClose={() => setOpen(false)}>
-        <div className="text-center w-56">
-          <div className="mx-auto my-4 w-48">
-            <h3 className="text-lg font-black text-gray-800">Confirm Delete</h3>
-            <p className="text-sm text-gray-500">
-              Are you sure you want to delete this item?
-            </p>
-          </div>
-          <div className="flex gap-4">
-            <button className="btn bg-red-500 rounded-md text-white hover:bg-red-300  p-2 w-full" onClick={handleClickDelete}>Delete</button>
-            <button
-              className="btn btn-light w-full"
-              onClick={() => setOpen(false)}
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </Modal>
+      <Modal open={open} onClose={() => setOpen(false)} handleClickDelete={handleClickDelete}/>
     </div>
   );
 };

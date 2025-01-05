@@ -9,7 +9,7 @@ import "./TestimonialForm.css";
 import { useNavigate, useParams } from "react-router-dom";
 
 // Thunks
-import { addMissionVision,updateMssionVision,TMissionVision } from "../../redux/slice/missionVisionSlice";
+import { addMissionVision,updateMssionVision,TMissionVision } from "../../redux/slice/mission-vision/missionVisionSlice";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";

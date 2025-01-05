@@ -5,7 +5,7 @@ import TestimonialsCard from "../../components/TestimonialsCard/TestimonialsCard
 
 // Thunks
 
-import { getAllTestimonials } from "../../redux/slice/testimonialSlice";
+import { getAllTestimonials } from "../../redux/slice/testimonials/testimonialSlice";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -22,7 +22,6 @@ const Testimonials: React.FC = () => {
     (state) => state.testimonialSlice
   );
 
-  console.log(testimonials);
 
   // For Fetching All Testimonials From Slice
   useEffect(() => {

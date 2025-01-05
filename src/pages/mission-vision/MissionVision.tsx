@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import CardMissionVision from "../../components/CardMissionVision/CardMissionVision";
 
 // Thunks
-import { getAllMissionVision } from "../../redux/slice/missionVisionSlice";
+import { getAllMissionVision } from "../../redux/slice/mission-vision/missionVisionSlice";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";

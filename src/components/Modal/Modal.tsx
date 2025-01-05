@@ -7,10 +7,10 @@ import { X } from "react-feather"
 type TProps={
     open:boolean,
     onClose:()=>void,
-    children:React.ReactNode
+    handleClickDelete:()=>void
 }
 
- const Modal:React.FC<TProps>=({ open, onClose, children }) =>{
+ const Modal:React.FC<TProps>=({ open, onClose, handleClickDelete }) =>{
   return (
     // backdrop
     <div
@@ -34,7 +34,28 @@ type TProps={
         >
           <X />
         </button>
-        {children}
+        <div className="text-center w-56">
+          <div className="mx-auto my-4 w-48">
+            <h3 className="text-lg font-black text-gray-800">Confirm Delete</h3>
+            <p className="text-sm text-gray-500">
+              Are you sure you want to delete this item?
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <button
+              className="btn bg-red-500 rounded-md text-white hover:bg-red-300  p-2 w-full"
+              onClick={handleClickDelete}
+            >
+              Delete
+            </button>
+            <button
+              className="btn btn-light w-full"
+              onClick={onClose}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   )

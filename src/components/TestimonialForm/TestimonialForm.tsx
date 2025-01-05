@@ -9,7 +9,7 @@ import "./TestimonialForm.css";
 import { useNavigate, useParams } from "react-router-dom";
 
 // Thunks
-import { addTestimonail,TTestimonial,updateTestimonial } from "../../redux/slice/testimonialSlice";
+import { addTestimonail,TTestimonial,updateTestimonial } from "../../redux/slice/testimonials/testimonialSlice";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";

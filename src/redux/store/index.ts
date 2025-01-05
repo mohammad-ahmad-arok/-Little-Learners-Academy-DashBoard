@@ -2,8 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 
 // Slices
 import faqs from "../slice/faqSlice"
-import testimonialSlice from "../slice/testimonialSlice"
-import missionVision from "../slice/missionVisionSlice"
+import testimonialSlice from "../slice/testimonials/testimonialSlice"
+import missionVision from "../slice/mission-vision/missionVisionSlice"
 
 export const store=configureStore({reducer:{testimonialSlice,faqs,missionVision}})
 

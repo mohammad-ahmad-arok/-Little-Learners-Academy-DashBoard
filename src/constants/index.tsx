@@ -39,33 +39,4 @@ export const DashBoardLinks = [
   },
 ];
 
-export const testimonialsData = [
-  {
-    image: "/assets/images/Vector.png",
-    name: "Jennifer B",
-    star: 5,
-    comment:
-      "Little Learners Academy has been a second home for my child. The caring staff and engaging programs have made her excited to go to school every day!"
-  },
-  {
-    image: "/assets/images/Vector.png",
-    name: "Jennifer B",
-    star: 5,
-    comment:
-      "Little Learners Academy has been a second home for my child. The caring staff and engaging programs have made her excited to go to school every day!"
-  },
-  {
-    image: "/assets/images/Vector.png",
-    name: "Jennifer B",
-    star: 5,
-    comment:
-      "Little Learners Academy has been a second home for my child. The caring staff and engaging programs have made her excited to go to school every day!"
-  },
-  {
-    image: "/assets/images/Vector.png",
-    name: "Jennifer B",
-    star: 5,
-    comment:
-      "Little Learners Academy has been a second home for my child. The caring staff and engaging programs have made her excited to go to school every day!"
-  },
-];
+

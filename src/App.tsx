@@ -19,7 +19,7 @@ function App() {
             );
           })}
               <Route path="testimonials/add" element={<NewItem><TestimonialForm/></NewItem>} />
-              <Route path="testimonials/update/:id" element={<NewItem><TestimonialForm/></NewItem>}  />  
+              <Route path="testimonials/update/:id" element={<NewItem><TestimonialForm/></NewItem>}  />   
               <Route path="mission-vision/add" element={<NewItem><MissionVisionForm/></NewItem>} />
               <Route path="mission-vision/update/:Ptitle" element={<NewItem><MissionVisionForm/></NewItem>}  />  
               
