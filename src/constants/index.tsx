@@ -9,7 +9,7 @@ import { GrOverview } from "react-icons/gr";
 import { FaUserTie } from "react-icons/fa6";
 import MissionVision from "../pages/mission-vision/MissionVision";
 import Members from "../pages/Member/Members";
-
+import History from "../pages/history/History";
 export const DashBoardLinks = [
   {
     path: "benefits",
@@ -28,6 +28,12 @@ export const DashBoardLinks = [
     label: "FAQ",
     icon: <FaPersonCircleQuestion />,
     childComponente: <Faq />,
+  },
+  {
+    path: "history",
+    label: "history",
+    icon: <SiBentobox />,
+    childComponente: <History />,
   },
   {
     path: "mission-vision",
