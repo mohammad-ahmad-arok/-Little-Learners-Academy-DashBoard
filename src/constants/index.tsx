@@ -1,6 +1,7 @@
 import Benefits from "../pages/benefits/Benefits";
 import Testimonials from "../pages/testimonials/Testimonials";
 import Faq from "../pages/FAQ/Faq";
+import History from "../pages/history/history";
 import Login from "../pages/login/Login";
 import { SiBentobox } from "react-icons/si";
 import { SiLibreofficewriter } from "react-icons/si";
@@ -24,6 +25,12 @@ export const DashBoardLinks = [
     label: "FAQ",
     icon: <FaPersonCircleQuestion />,
     childComponente: <Faq />,
+  },
+  {
+    path: "history",
+    label: "history",
+    icon: <SiBentobox />,
+    childComponente: <History/>,
   },
   {
     path: "login",
