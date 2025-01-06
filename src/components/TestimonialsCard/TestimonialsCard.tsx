@@ -22,6 +22,8 @@ import { useState } from "react";
 
 //React-Hot-Toast
 import toast from "react-hot-toast";
+import { MdEdit } from "react-icons/md";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 
 // Types
@@ -89,12 +91,17 @@ const TestimonialsCard: React.FC<TestimonialsCardProps> = ({
 
   return (
     <div className={`TestimonialsCard ${styles.cardStyle} md:p-12 p-7 `}>
-      <div className="flex justify-start items-center  gap-3 mb-2">
-        <button className={styles2.btn} onClick={handleClickUpdate}>
-          UPDATE
+      <div className="flex justify-end items-center  gap-3 mb-2">
+       <button className="text-4xl  text-white hover:bg-red-400 bg-[#FF8D4C] p-2 rounded-lg"  onClick={handleClickUpdate}>
+          <MdEdit/>
         </button>
-        <button className={styles2.btn} onClick={()=>{setOpen(true)}}>
-          DELETE
+        <button
+          onClick={() => {
+            setOpen(true);
+          }}
+          className="text-4xl text-white hover:bg-red-400 bg-red-600 p-2 rounded-lg"
+        >
+          <RiDeleteBin6Line/>
         </button>
       </div>
       <div className="profile text-center">

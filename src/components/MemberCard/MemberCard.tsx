@@ -8,6 +8,12 @@ import { deleteMember } from "../../redux/slice/members/memberSlice";
 import toast from "react-hot-toast";
 import Modal from "../Modal/Modal";
 
+
+import { MdEdit } from "react-icons/md";
+
+import { RiDeleteBin6Line } from "react-icons/ri";
+
+
 type TProps = {
   id: string;
   name: string;
@@ -49,22 +55,22 @@ const MemberCard: React.FC<TProps> = ({
   };
   return (
     <div className="w-full  bg-white border-r-8 border-b-8 border-l-2 border-t-2 border-[#262626] rounded p-10">
-      <div className="flex justify-between items-center  gap-3 mb-2">
-       <div className="flex  gap-2">
-       <button className={styles2.btn} onClick={handleClickUpdate}>
-          UPDATE
+      <div className="flex justify-between items-center flex-row-reverse  gap-3 mb-2">
+       <div className="flex  gap-3">
+       <button className="text-4xl  text-white hover:bg-red-400 bg-[#FF8D4C] p-2 rounded-lg"  onClick={handleClickUpdate}>
+          <MdEdit/>
         </button>
         <button
-          className={styles2.btn}
           onClick={() => {
             setOpen(true);
           }}
+          className="text-4xl text-white hover:bg-red-400 bg-red-600 p-2 rounded-lg"
         >
-          DELETE
+          <RiDeleteBin6Line/>
         </button>
        </div>
-      <div className="w-20">
-      <img src={photo} className="border-2 border-black rounded" alt="photo" />
+      <div className="w-36">
+      <img src={photo} className="border-2 border-black rounded mb-4 w-auto" alt="photo" />
       </div>
 
       </div>
@@ -75,7 +81,7 @@ const MemberCard: React.FC<TProps> = ({
         </div>
       </div>
 
-      <div className="w-full xs:h-[256px] lg:h-[220px] bg-[#FFF5F0] mt-5 border-2 border-black">
+      <div className="w-full xs:h-[256px] lg:h-[220px] bg-[#FFF5F0] mt-5 border-2 border-black p-10">
         <p className="font-semibold text-xl text-left xs:p-2 p-6">
           {qualification}
         </p>

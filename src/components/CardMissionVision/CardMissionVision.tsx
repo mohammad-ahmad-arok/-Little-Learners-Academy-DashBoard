@@ -12,6 +12,8 @@ import Modal from "../Modal/Modal";
 
 //React-Hot-Toast
 import toast from "react-hot-toast";
+import { MdEdit } from "react-icons/md";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 
 
@@ -52,12 +54,17 @@ const CardMissionVision:React.FC<TPropsCard> = ({title,description,id}) => {
 
   return (
     <div className=" w-full bg-white rounded border-r-8 border-b-8 border-l-2 border-t-2 border-[#262626] p-12 ">
-      <div className="flex justify-center items-center  gap-3 mb-2">
-      <button className={styles2.btn} onClick={handleClickUpdate}>
-          UPDATE
+      <div className="flex justify-end  items-center  gap-3 ">
+       <button className="text-4xl  text-white hover:bg-red-400 bg-[#FF8D4C] p-2 rounded-lg"  onClick={handleClickUpdate}>
+          <MdEdit/>
         </button>
-        <button className={styles2.btn} onClick={()=>{setOpen(true)}}>
-          DELETE
+        <button
+          onClick={() => {
+            setOpen(true);
+          }}
+          className="text-4xl text-white hover:bg-red-400 bg-red-600 p-2 rounded-lg"
+        >
+          <RiDeleteBin6Line/>
         </button>
       </div>
       <div className="flex justify-between items-center">
