@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useNavigate } from "react-router-dom";
 
-import styles2 from "../dashboardNav/header.module.css";
 
 import { deleteMember } from "../../redux/slice/members/memberSlice";
 import toast from "react-hot-toast";

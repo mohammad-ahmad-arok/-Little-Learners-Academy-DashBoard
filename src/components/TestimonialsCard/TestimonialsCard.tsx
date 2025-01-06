@@ -3,7 +3,6 @@ import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 // Styles
 import styles from "../../styles"
-import styles2 from "../dashboardNav/header.module.css"
 
 // Router-Dom
 import { useNavigate } from "react-router-dom";
