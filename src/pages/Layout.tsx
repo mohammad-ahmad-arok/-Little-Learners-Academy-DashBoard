@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
 import DashboardNav from "../components/dashboardNav/DashboardNav";
 import DashboardSidebar from "../components/dashboardSidebar/DashboardSidebar";
+import { Toaster } from "react-hot-toast";
 
 const DashBoardLayout = () => {
   return (
     <>
       <DashboardNav />
+      <Toaster/>
       <div className="overflow-height flex items-start justify-between overflow-hidden">
         <div className="overflow-height lg:w-1/7 hidden sm:block bg-[#ff5d00] text-white p-1 lg:p-5">
           <DashboardSidebar />
