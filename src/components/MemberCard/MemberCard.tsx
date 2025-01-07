@@ -53,7 +53,7 @@ const MemberCard: React.FC<TProps> = ({
     }
   };
   return (
-    <div className="w-full  bg-white border-r-8 border-b-8 border-l-2 border-t-2 border-[#262626] rounded p-10">
+    <div className="max-w-5xl   bg-white border-r-8 border-b-8 border-l-2 border-t-2 border-[#262626] rounded p-10 mx-auto">
       <div className="flex justify-between items-center flex-row-reverse  gap-3 mb-2">
        <div className="flex  gap-3">
        <button className="text-4xl  text-white hover:bg-red-400 bg-[#FF8D4C] p-2 rounded-lg"  onClick={handleClickUpdate}>

@@ -22,7 +22,7 @@ const MainContent = ({ status, error, children, to }: TProps) => {
         >
           ADD NEW
         </button>
-        {children}
+       {children}
       </div>
     </Loading>
   );
