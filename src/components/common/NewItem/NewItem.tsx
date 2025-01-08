@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"
 import styles from "../../dashboardNav/header.module.css"
 import React from "react";
 
+import { RiArrowGoBackFill } from "react-icons/ri";
+
 type TProps ={
   children:React.ReactNode
 }
@@ -18,7 +20,7 @@ const NewItem:React.FC<TProps> = ({children}) => {
   return (
     <div className="p-11">
       <button className={`${styles.btn} mb-4`} onClick={clickedHandler}>
-         BACK
+         <RiArrowGoBackFill/>
       </button>
        {children}
 

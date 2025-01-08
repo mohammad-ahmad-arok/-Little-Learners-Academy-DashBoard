@@ -53,7 +53,7 @@ const MemberCard: React.FC<TProps> = ({
     }
   };
   return (
-    <div className="max-w-5xl   bg-white border-r-8 border-b-8 border-l-2 border-t-2 border-[#262626] rounded p-10 mx-auto">
+    <div className="max-w-4xl h-full   bg-white border-r-8 border-b-8 border-l-2 border-t-2 border-[#262626] rounded p-10 mx-auto">
       <div className="flex justify-between items-center flex-row-reverse  gap-3 mb-2">
        <div className="flex  gap-3">
        <button className="text-4xl  text-white hover:bg-red-400 bg-[#FF8D4C] p-2 rounded-lg"  onClick={handleClickUpdate}>
@@ -80,11 +80,11 @@ const MemberCard: React.FC<TProps> = ({
         </div>
       </div>
 
-      <div className="w-full xs:h-[256px] lg:h-[220px] bg-[#FFF5F0] mt-5 border-2 border-black p-10">
+      <div className="w-full  bg-[#FFF5F0] mt-5 border-2 border-black p-10">
         <p className="font-semibold text-xl text-left xs:p-2 p-6">
           {qualification}
         </p>
-        <p className="font-medium">{description}</p>
+        <p className="font-medium break-words">{description}</p>
         <p className="text-Grey_30 text-center mt-20">{email}</p>
       </div>
       <Modal open={open} onClose={() => setOpen(false)} handleClickDelete={handleClickDelete}/>

@@ -37,6 +37,7 @@ const MissionVision: React.FC = () => {
             description={record.description}
           />
         )}
+        grid={true}
       />
     </MainContent>
   );
