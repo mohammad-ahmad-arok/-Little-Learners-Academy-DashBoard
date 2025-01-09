@@ -20,6 +20,7 @@ import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 // React-Hot-Toast
 import toast from "react-hot-toast";
 import Loading from "../../common/Loading/Loading";
+import UploadImage from "../../common/uploadImage/UploadImage";
 
 // Types
 type Inputs = {
@@ -27,11 +28,12 @@ type Inputs = {
   photo: string;
   description: string;
   qualification: string;
-  email:string
+  email: string;
 };
 
 const MemberForm: React.FC = () => {
   const dispatch = useAppDispatch();
+
 
   const { id } = useParams();
 
@@ -46,6 +48,9 @@ const MemberForm: React.FC = () => {
   const [qualification, setQualification] = useState<string | undefined>("");
   const [description, setDescription] = useState("");
   const [email, setEmail] = useState("");
+  
+
+
 
   const isUpdateMode = typeof id === "string";
 
@@ -56,8 +61,7 @@ const MemberForm: React.FC = () => {
         setName(record.name);
         setDescription(record.description);
         setQualification(record.qualification);
-        setEmail(record.email)
-
+        setEmail(record.email);
       }
     }
   }, [id, isUpdateMode, records]);
@@ -66,7 +70,6 @@ const MemberForm: React.FC = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
     reset,
   } = useForm<Inputs>({
@@ -74,24 +77,23 @@ const MemberForm: React.FC = () => {
       name,
       qualification,
       description,
-      email
+      email,
     },
   });
 
   useEffect(() => {
-    reset({ name, qualification, description,email });
-  }, [name, qualification,email, description, reset]);
+    reset({ name, qualification, description, email });
+  }, [name, qualification, email, description, reset]);
+
 
   // Function To Handle Submit
+  const form = new FormData();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const form = new FormData();
-    if (watch("photo").length > 0) {
-      form.append("photo", data.photo[0]);
-    }
     form.append("name", data.name);
     form.append("description", data.description);
     form.append("qualification", data.qualification);
     form.append("email", data.email);
+
 
     const action = isUpdateMode
       ? updateMember({ id: id, data: form })
@@ -138,22 +140,13 @@ const MemberForm: React.FC = () => {
           )}
         </div>
         <div className="form-group">
-          <label htmlFor="image">Photo</label>
-          <input
-            id="photo"
-            type="file"
-            placeholder="Add Photo"
-            {...register("photo")}
-          />
-        </div>
-        <div className="form-group">
           <label htmlFor="qualification">Qualification</label>
           <input
             id="qualification"
             type="text"
             placeholder="Enter qualification"
             {...register("qualification", {
-              required: "The Evaluation is Required"
+              required: "The Evaluation is Required",
             })}
           />
           {errors.qualification && (
@@ -174,7 +167,10 @@ const MemberForm: React.FC = () => {
             <span className="text-red-400">{errors.description.message}</span>
           )}
         </div>
-        
+
+
+        <UploadImage form={form} type="photo" records={records}/>
+
         <button type="submit" className="submit-button">
           {typeof id == "string" ? "UPDATE" : "ADD"}
         </button>
