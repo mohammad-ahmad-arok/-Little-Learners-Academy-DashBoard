@@ -20,6 +20,7 @@ import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 // React-Hot-Toast
 import toast from "react-hot-toast";
 import Loading from "../../common/Loading/Loading";
+import UploadImage from "../../common/uploadImage/UploadImage";
 
 // Types
 type Inputs = {
@@ -62,7 +63,6 @@ const TestimonialForm: React.FC = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
     reset,
   } = useForm<Inputs>({
@@ -78,11 +78,8 @@ const TestimonialForm: React.FC = () => {
   }, [name, evaluation, description, reset]);
 
   // Function To Handle Submit
+  const form = new FormData();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const form = new FormData();
-    if (watch("image").length > 0) {
-      form.append("image", data.image[0]);
-    }
     form.append("name", data.name);
     form.append("description", data.description);
     form.append("evaluation", data.evaluation);
@@ -120,15 +117,6 @@ const TestimonialForm: React.FC = () => {
           )}
         </div>
         <div className="form-group">
-          <label htmlFor="image">Image</label>
-          <input
-            id="image"
-            type="file"
-            placeholder="Add Image"
-            {...register("image")}
-          />
-        </div>
-        <div className="form-group">
           <label htmlFor="evaluation">Evaluation</label>
           <input
             id="evaluation"
@@ -162,6 +150,9 @@ const TestimonialForm: React.FC = () => {
             <span className="text-red-400">{errors.description.message}</span>
           )}
         </div>
+
+        <UploadImage form={form} type="image" records={testimonials}/>
+        
         <button type="submit" className="submit-button">
           {typeof id == "string" ? "UPDATE" : "ADD"}
         </button>

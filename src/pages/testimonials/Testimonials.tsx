@@ -40,6 +40,7 @@ const Testimonials: React.FC = () => {
             image={record.image?.url}
           />
         )}
+        grid={true}
       />
     </MainContent>
   );

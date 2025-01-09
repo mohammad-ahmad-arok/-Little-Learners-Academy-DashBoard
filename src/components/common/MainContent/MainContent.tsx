@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import styles from "../../dashboardNav/header.module.css";
 
+import { RiAddCircleLine } from "react-icons/ri";
+
 type TProps = {
   status: "Idle" | "Pending" | "Fail" | "Success";
   error: string | null;
@@ -20,7 +22,7 @@ const MainContent = ({ status, error, children, to }: TProps) => {
             navigate(`/${to}/add`);
           }}
         >
-          ADD NEW
+          <RiAddCircleLine/>
         </button>
         {children}
       </div>

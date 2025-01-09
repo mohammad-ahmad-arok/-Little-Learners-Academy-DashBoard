@@ -3,7 +3,6 @@ import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 // Styles
 import styles from "../../styles"
-import styles2 from "../dashboardNav/header.module.css"
 
 // Router-Dom
 import { useNavigate } from "react-router-dom";
@@ -108,7 +107,7 @@ const TestimonialsCard: React.FC<TestimonialsCardProps> = ({
         <img
           src={image}
           alt={name}
-          className="w-16 h-16 rounded-full mx-auto md:mb-3 mb-2 bg-Orange_97 border border-black"
+          className="w-24 h-24 rounded-full mx-auto md:mb-3 mb-2 bg-Orange_97 border border-black"
         />
         <span className="text-Grey_15 font-semibold md:text-[24px] text-[20px]">
           {name}

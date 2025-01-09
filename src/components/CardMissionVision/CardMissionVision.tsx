@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import styles2 from "../dashboardNav/header.module.css"
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
@@ -23,7 +22,7 @@ type TPropsCard={
     description:string
 }
 
-const CardMissionVision:React.FC<TPropsCard> = ({title,description,id}) => {
+const CardMissionVision:React.FC<TPropsCard> = ({title,description}) => {
 
     // State For Modal To Open And Close
     const [open,setOpen]=useState(false)
