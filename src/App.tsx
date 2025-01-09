@@ -8,6 +8,9 @@ import NewItem from "./components/common/NewItem/NewItem";
 import TestimonialForm from "./components/Forms/TestimonialForm/TestimonialForm";
 import MissionVisionForm from "./components/Forms/MissionVisionForm/MissionVisionForm";
 import MemberForm from "./components/Forms/MemberForm/MemberForm";
+import Benefits from "./pages/benefits/Benefits";
+import AddEditBenefit from "./pages/benefits/AddEditBenefit";
+import AddEditHistory from "./pages/history/AddEditHistory";
 
 function App() {
   return (
@@ -25,6 +28,12 @@ function App() {
               <Route path="team-members/update/:id" element={<NewItem><MemberForm/></NewItem>}  />  
               <Route path="mission-vision/add" element={<NewItem><MissionVisionForm/></NewItem>} />
               <Route path="mission-vision/update/:Ptitle" element={<NewItem><MissionVisionForm/></NewItem>}  />  
+              <Route path="/" element={<Benefits/>} />
+              <Route path="/add-benefit" element={<AddEditBenefit />} />
+              <Route path="/edit-benefit/:id" element={<AddEditBenefit />} />
+              <Route path="/add-edit-history" element={<AddEditHistory />} />
+
+   
               
         </Route>
       </Routes>
