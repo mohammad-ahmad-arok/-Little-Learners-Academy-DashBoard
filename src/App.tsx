@@ -11,6 +11,8 @@ import MemberForm from "./components/Forms/MemberForm/MemberForm";
 import Benefits from "./pages/benefits/Benefits";
 import AddEditBenefit from "./pages/benefits/AddEditBenefit";
 import AddEditHistory from "./pages/history/AddEditHistory";
+import SpecialFeatures from "./pages/specialfeatures/SpecialFeatures";
+import AddEditSpecialFeature from "./pages/specialfeatures/AddEditSpecialFeature";
 
 function App() {
   return (
@@ -32,7 +34,8 @@ function App() {
               <Route path="/add-benefit" element={<AddEditBenefit />} />
               <Route path="/edit-benefit/:id" element={<AddEditBenefit />} />
               <Route path="/add-edit-history" element={<AddEditHistory />} />
-
+              <Route path="/special-features" element={<SpecialFeatures />} />
+              <Route path="/add-edit-special-feature" element={<AddEditSpecialFeature />} />
    
               
         </Route>

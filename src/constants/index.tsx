@@ -10,6 +10,8 @@ import { FaUserTie } from "react-icons/fa6";
 import MissionVision from "../pages/mission-vision/MissionVision";
 import Members from "../pages/Member/Members";
 import History from "../pages/history/History";
+import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
+
 export const DashBoardLinks = [
   {
     path: "benefits",
@@ -17,6 +19,7 @@ export const DashBoardLinks = [
     icon: <SiBentobox />,
     childComponente: <Benefits />,
   },
+
   {
     path: "testimonials",
     label: "Testimonials",
@@ -41,6 +44,7 @@ export const DashBoardLinks = [
     icon: <GrOverview />,
     childComponente: <MissionVision/>,
   },
+
   {
     path: "team-members",
     label: "TeamMember",
@@ -48,9 +52,16 @@ export const DashBoardLinks = [
     childComponente: <Members/>,
   },
   {
+    path: "Specialfeatures",
+    label: "Specialfeatures",
+    icon: <SiBentobox />,
+    childComponente: <SpecialFeatures />,
+  },
+  {
     path: "login",
     childComponente: <Login />,
   },
+  
 ];
 
 

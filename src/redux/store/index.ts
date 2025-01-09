@@ -7,13 +7,21 @@ import missionVision from "../slice/mission-vision/missionVisionSlice"
 import memberSlice from "../slice/members/memberSlice"
 import histories from "../slice/historySlice";
 import benefits from "../slice/benefitsSlice";
-
-export const store=configureStore({reducer:{testimonialSlice,faqs,missionVision,memberSlice,histories ,benefits}})
-
+import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice"; 
 
 
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
+export const store = configureStore({
+    reducer: {
+      testimonialSlice,
+      faqs,
+      missionVision,
+      memberSlice,
+      histories,
+      benefits,
+      specialFeatures: specialFeaturesReducer, 
+    },
+  });
+
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch
