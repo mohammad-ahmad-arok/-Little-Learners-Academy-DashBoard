@@ -19,6 +19,8 @@ const UploadImage = ({ form, type, records }: TProps) => {
 
   const isUpdateMode = typeof id === "string";
 
+  
+
   useEffect(() => {
     if (isUpdateMode) {
       const record = records.find((item: any) => item._id === id);
