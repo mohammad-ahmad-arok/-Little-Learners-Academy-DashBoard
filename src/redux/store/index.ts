@@ -1,19 +1,28 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 // Slices
-import faqs from "../slice/faqSlice"
-import testimonialSlice from "../slice/testimonials/testimonialSlice"
-import missionVision from "../slice/mission-vision/missionVisionSlice"
-import memberSlice from "../slice/members/memberSlice"
+import faqs from "../slice/Faq/faqSlice";
+import testimonialSlice from "../slice/testimonials/testimonialSlice";
+import admissionProcessSlice from "../slice/admissionProcess/admissionProcessSlice";
+import missionVision from "../slice/mission-vision/missionVisionSlice";
+import memberSlice from "../slice/members/memberSlice";
 import histories from "../slice/historySlice";
 import benefits from "../slice/benefitsSlice";
 import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice";
-export const store=configureStore({reducer:{testimonialSlice,faqs,missionVision,memberSlice,histories ,benefits,specialFeatures: specialFeaturesReducer,}})
-
-
-
+export const store = configureStore({
+  reducer: {
+    testimonialSlice,
+    admissionProcessSlice,
+    faqs,
+    missionVision,
+    memberSlice,
+    histories,
+    benefits,
+    specialFeatures: specialFeaturesReducer,
+  },
+});
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;

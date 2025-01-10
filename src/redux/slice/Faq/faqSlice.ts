@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchFAQs, createFAQ, editFAQ, removeFAQ } from "../faq/faqAct";
+import { fetchFAQs, createFAQ, editFAQ, removeFAQ } from "../../faq/faqAct";
 
 interface FAQ {
   _id: string;
@@ -25,7 +25,7 @@ const faqSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Fetch 
+      // Fetch
       .addCase(fetchFAQs.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -55,7 +55,6 @@ const faqSlice = createSlice({
       .addCase(removeFAQ.fulfilled, (state, action) => {
         state.faqs = state.faqs.filter((faq) => faq._id !== action.payload);
       });
-
   },
 });
 

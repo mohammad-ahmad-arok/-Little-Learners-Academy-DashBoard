@@ -11,6 +11,8 @@ import MissionVision from "../pages/mission-vision/MissionVision";
 import Members from "../pages/Member/Members";
 import History from "../pages/history/History";
 import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
+import AdmissionProcess from "../pages/AdmissionProcess/AdmissionProcess";
+import { LuBookOpenCheck } from "react-icons/lu";
 
 export const DashBoardLinks = [
   {
@@ -41,13 +43,13 @@ export const DashBoardLinks = [
     path: "mission-vision",
     label: "MissionVision",
     icon: <GrOverview />,
-    childComponente: <MissionVision/>,
+    childComponente: <MissionVision />,
   },
   {
     path: "team-members",
     label: "TeamMember",
     icon: <FaUserTie />,
-    childComponente: <Members/>,
+    childComponente: <Members />,
   },
   {
     path: "Specialfeatures",
@@ -56,9 +58,13 @@ export const DashBoardLinks = [
     childComponente: <SpecialFeatures />,
   },
   {
+    path: "admissionProcess",
+    label: "Admission Process",
+    icon: <LuBookOpenCheck />,
+    childComponente: <AdmissionProcess />,
+  },
+  {
     path: "login",
     childComponente: <Login />,
   },
 ];
-
-
