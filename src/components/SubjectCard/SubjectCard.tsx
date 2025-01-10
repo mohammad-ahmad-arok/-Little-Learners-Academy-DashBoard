@@ -39,7 +39,7 @@ const SubjectCard = ({ id, name, description, image }: TProps) => {
   };
   return (
     <div
-      className="relative bg-white rounded-xl shadow-card-shadow w-full flex flex-col justify-center items-center h-full
+      className="relative bg-white rounded-xl shadow-card-shadow  flex flex-col justify-center items-center
              gap-[30px] xl:gap-[40px] 2xl:gap-[50px] mb-[30px] xl:mb-[40px] 2xl:mb-[50px]"
     >
       <div className="flex z-10 absolute right-2 top-2 gap-2  ">
@@ -58,9 +58,9 @@ const SubjectCard = ({ id, name, description, image }: TProps) => {
           <RiDeleteBin6Line />
         </button>
       </div>
-      <div className="absolute bg-Orange_95 w-[25%] h-[65%] 2xl:h-[70%] top-0 border-2 border-Grey_15 rounded-b-xl z-0 "></div>
-      <img src={image} className="z-10 xs:w-56 md:w-80 xs:h-40 md:h-52 mt-14 rounded-xl" alt={name} />
-      <div className="text-center flex flex-col ">
+      <div className="absolute bg-Orange_95 w-[25%] xs:h-[50%] md:h-[60%] top-0 border-2 border-Grey_15 rounded-b-xl z-0 "></div>
+      <img src={image} className="z-10  items-center mb-20 relative top-20 md:h-64 xs:w-44 md:w-96  rounded-xl" alt={name} />
+      <div className="text-center flex flex-col z-10 w-full p-4 ">
         <h5
           className="text-[22px]  
               xl:text-[24px] 2xl:text-[28px] font-[700] text-[#1A1A1A]"
@@ -69,7 +69,7 @@ const SubjectCard = ({ id, name, description, image }: TProps) => {
         </h5>
         <p
           className="text-[20px] 
-               xl:text-[16px] 2xl:text-[20px] font-[500] text-Grey_30"
+               xl:text-[16px] 2xl:text-[20px] font-[500] text-Grey_30 break-words "
         >
           {description}
         </p>
