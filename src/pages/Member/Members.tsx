@@ -44,7 +44,7 @@ const Members: React.FC = () => {
             email={record.email}
           />
         )}
-        grid={false}
+        grid={true}
       />
     </MainContent>
   );

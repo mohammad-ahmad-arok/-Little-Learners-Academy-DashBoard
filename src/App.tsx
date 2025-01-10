@@ -16,6 +16,9 @@ import AddEditSpecialFeature from "./pages/specialfeatures/AddEditSpecialFeature
 import AddEditFaq from "./pages/FAQ/AddEditFaq";
 import AdmissionProcessForm from "./components/Forms/AdmissionProcessForm/AdmissionProcessForm";
 
+import SubjectForm from "./components/Forms/SubjectForm/SubjectForm";
+import ActivityForm from "./components/Forms/ActivityForm/ActivityForm";
+
 function App() {
   return (
     <>
@@ -46,6 +49,33 @@ function App() {
               </NewItem>
             }
           />
+
+          <Route
+            path="activities/update/:id"
+            element={
+              <NewItem>
+                <ActivityForm />
+              </NewItem>
+            }
+          />
+
+          <Route
+            path="subjects/add"
+            element={
+              <NewItem>
+                <SubjectForm />
+              </NewItem>
+            }
+          />
+          <Route
+            path="subjects/update/:id"
+            element={
+              <NewItem>
+                <SubjectForm />
+              </NewItem>
+            }
+          />
+
           <Route
             path="team-members/add"
             element={

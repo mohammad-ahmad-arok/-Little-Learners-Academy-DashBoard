@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 // Styles
-import "./TestimonialForm.css";
+import "../Forms.css";
 import { useNavigate, useParams } from "react-router-dom";
 
 // Thunks

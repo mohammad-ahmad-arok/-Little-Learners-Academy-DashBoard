@@ -14,6 +14,11 @@ import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
 import AdmissionProcess from "../pages/AdmissionProcess/AdmissionProcess";
 import { LuBookOpenCheck } from "react-icons/lu";
 
+import Subjects from "../pages/subjects/Subjects";
+import Activities from "../pages/Activities/Activities";
+import { FaBook } from "react-icons/fa";
+
+
 export const DashBoardLinks = [
   {
     path: "benefits",
@@ -62,6 +67,18 @@ export const DashBoardLinks = [
     label: "Admission Process",
     icon: <LuBookOpenCheck />,
     childComponente: <AdmissionProcess />,
+  },
+  {
+    path: "subjects",
+    label: "Subjects",
+    icon: <FaBook />,
+    childComponente: <Subjects/>,
+  },
+  {
+    path: "activities",
+    label: "Activities",
+    icon: <FaBook />,
+    childComponente: <Activities/>,
   },
   {
     path: "login",

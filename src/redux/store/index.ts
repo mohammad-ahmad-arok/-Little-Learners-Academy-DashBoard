@@ -9,16 +9,19 @@ import memberSlice from "../slice/members/memberSlice";
 import histories from "../slice/historySlice";
 import benefits from "../slice/benefitsSlice";
 import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice";
+import subjectSlice from "../slice/subjects/subjectSlice";
+import activitySlice from "../slice/activities/activitySlice";
+
 export const store = configureStore({
   reducer: {
     testimonialSlice,
-    admissionProcessSlice,
     faqs,
     missionVision,
     memberSlice,
     histories,
     benefits,
-    specialFeatures: specialFeaturesReducer,
+    subjectSlice,
+    activitySlice,
   },
 });
 
