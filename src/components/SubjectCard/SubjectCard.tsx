@@ -40,7 +40,7 @@ const SubjectCard = ({ id, name, description, image }: TProps) => {
   return (
     <div
       className="relative bg-white rounded-xl shadow-card-shadow  flex flex-col justify-center items-center
-             gap-[30px] xl:gap-[40px] 2xl:gap-[50px] mb-[30px] xl:mb-[40px] 2xl:mb-[50px]"
+             gap-[30px] xl:gap-[40px] 2xl:gap-[50px] mb-[30px] xl:mb-[40px] 2xl:mb-[50px] h-full"
     >
       <div className="flex z-10 absolute right-2 top-2 gap-2  ">
         <button
