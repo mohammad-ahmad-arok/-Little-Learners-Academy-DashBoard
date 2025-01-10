@@ -8,7 +8,8 @@ import memberSlice from "../slice/members/memberSlice"
 import histories from "../slice/historySlice";
 import benefits from "../slice/benefitsSlice";
 import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice";
-export const store=configureStore({reducer:{testimonialSlice,faqs,missionVision,memberSlice,histories ,benefits,specialFeatures: specialFeaturesReducer,}})
+import feeStructures from "../slice/feeStructureSlice";
+export const store=configureStore({reducer:{testimonialSlice,faqs,missionVision,memberSlice,histories ,benefits,specialFeatures: specialFeaturesReducer, feeStructures,}})
 
 
 

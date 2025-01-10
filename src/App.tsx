@@ -13,6 +13,8 @@ import AddEditBenefit from "./pages/benefits/AddEditBenefit";
 import AddEditHistory from "./pages/history/AddEditHistory";
 import SpecialFeatures from "./pages/specialfeatures/SpecialFeatures";
 import AddEditSpecialFeature from "./pages/specialfeatures/AddEditSpecialFeature";
+import FeeStructures from "./pages/FeeStructures/FeeStructures";
+import AddEditFeeStructure from "./pages/FeeStructures/AddEditFeeStructure";
 
 function App() {
   return (
@@ -36,7 +38,9 @@ function App() {
               <Route path="/add-edit-history" element={<AddEditHistory />} />
               <Route path="/special-features" element={<SpecialFeatures />} />
               <Route path="/add-edit-special-feature" element={<AddEditSpecialFeature />} />
-   
+              <Route path="/fee-structure" element={<FeeStructures />} />
+              <Route path="/add-fee-structure" element={<AddEditFeeStructure />} />
+              <Route path="/edit-fee-structure/:id" element={<AddEditFeeStructure />} />
         </Route>
       </Routes>
     </>

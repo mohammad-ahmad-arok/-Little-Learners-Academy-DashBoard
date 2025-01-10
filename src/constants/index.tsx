@@ -11,6 +11,7 @@ import MissionVision from "../pages/mission-vision/MissionVision";
 import Members from "../pages/Member/Members";
 import History from "../pages/history/History";
 import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
+import FeeStructures from "../pages/FeeStructures/FeeStructures";
 
 export const DashBoardLinks = [
   {
@@ -54,6 +55,12 @@ export const DashBoardLinks = [
     label: "Specialfeatures",
     icon: <SiBentobox />,
     childComponente: <SpecialFeatures />,
+  },
+  {
+    path: "FeeStructures",
+    label: "FeeStructures",
+    icon: <SiBentobox />,
+    childComponente: <FeeStructures />,
   },
   {
     path: "login",
