@@ -80,7 +80,7 @@ const MemberCard: React.FC<TProps> = ({
         </div>
       </div>
 
-      <div className="w-full  bg-[#FFF5F0] mt-5 border-2 border-black p-10">
+      <div className="w-full  bg-[#FFF5F0] mt-5 border-2 border-black p-10 break-words">
         <p className="font-semibold text-xl text-left xs:p-2 p-6">
           {qualification}
         </p>

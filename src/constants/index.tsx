@@ -7,6 +7,7 @@ import { SiLibreofficewriter } from "react-icons/si";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
 import { GrOverview } from "react-icons/gr";
 import { FaUserTie } from "react-icons/fa6";
+import { FaBook } from "react-icons/fa6";
 import MissionVision from "../pages/mission-vision/MissionVision";
 import Members from "../pages/Member/Members";
 import History from "../pages/history/History";
@@ -51,7 +52,7 @@ export const DashBoardLinks = [
   {
     path: "subjects",
     label: "Subjects",
-    icon: <FaUserTie />,
+    icon: <FaBook />,
     childComponente: <Subjects/>,
   },
   {
