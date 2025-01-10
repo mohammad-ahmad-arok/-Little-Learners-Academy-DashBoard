@@ -7,12 +7,18 @@ import { SiLibreofficewriter } from "react-icons/si";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
 import { GrOverview } from "react-icons/gr";
 import { FaUserTie } from "react-icons/fa6";
-import { FaBook } from "react-icons/fa6";
 import MissionVision from "../pages/mission-vision/MissionVision";
 import Members from "../pages/Member/Members";
 import History from "../pages/history/History";
+import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
+import AdmissionProcess from "../pages/AdmissionProcess/AdmissionProcess";
+import { LuBookOpenCheck } from "react-icons/lu";
+
 import Subjects from "../pages/subjects/Subjects";
 import Activities from "../pages/Activities/Activities";
+import { FaBook } from "react-icons/fa";
+
+
 export const DashBoardLinks = [
   {
     path: "benefits",
@@ -42,13 +48,25 @@ export const DashBoardLinks = [
     path: "mission-vision",
     label: "MissionVision",
     icon: <GrOverview />,
-    childComponente: <MissionVision/>,
+    childComponente: <MissionVision />,
   },
   {
     path: "team-members",
     label: "TeamMember",
     icon: <FaUserTie />,
-    childComponente: <Members/>,
+    childComponente: <Members />,
+  },
+  {
+    path: "Specialfeatures",
+    label: "Specialfeatures",
+    icon: <SiBentobox />,
+    childComponente: <SpecialFeatures />,
+  },
+  {
+    path: "admissionProcess",
+    label: "Admission Process",
+    icon: <LuBookOpenCheck />,
+    childComponente: <AdmissionProcess />,
   },
   {
     path: "subjects",
@@ -67,5 +85,3 @@ export const DashBoardLinks = [
     childComponente: <Login />,
   },
 ];
-
-

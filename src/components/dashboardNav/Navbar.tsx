@@ -32,12 +32,13 @@ const Navbar = () => {
         }}
       >
         <ul className={`${styles.navLinks} block sm:hidden`}>
-          {DashBoardLinks.map((item) => {
+          {DashBoardLinks.map((item, index) => {
             if (item.label == "Dashboard" || item.label == "Contact") {
               return;
             }
             return (
               <Link
+                key={index}
                 onClick={() => setToggle(false)}
                 className={styles.navLink}
                 to={item.path}

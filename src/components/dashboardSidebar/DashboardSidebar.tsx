@@ -14,12 +14,13 @@ const DashboardSidebar = () => {
         <span className="hidden lg:block text-3xl text-black">Dashboard</span>
       </Link>
       <ul className="mt-10 flex items-center justify-center flex-col lg:items-start">
-        {DashBoardLinks.map((item) => {
+        {DashBoardLinks.map((item, index) => {
           if (item.path == "login" || item.path == "register") {
             return;
           }
           return (
             <Link
+              key={index}
               onClick={() => setselectLink(item.path)}
               className={`flex items-center w-full p-2 rounded-md text-xl mb-3 lg:border-b
                  border-gray-300 hover:border-yellow-200 hover:bg-Orange_70 hover:text-black transition
