@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 
-// Components
-import TestimonialsCard from "../../components/TestimonialsCard/TestimonialsCard";
-
 // Thunks
 
-import { getAllTestimonials } from "../../redux/slice/testimonials/testimonialSlice";
+import { getAllActivities } from "../../redux/slice/activities/activitySlice";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -13,31 +10,31 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 // Component
 import GridList from "../../components/common/GridList/GridList";
 import MainContent from "../../components/common/MainContent/MainContent";
+import ActivityCard from "../../components/ActivityCard/ActivityCard";
 
-const Testimonials: React.FC = () => {
+const Activities: React.FC = () => {
   const dispatch = useAppDispatch();
 
   // Info From Slice
-  const { testimonials, isLoading, error } = useAppSelector(
-    (state) => state.testimonialSlice
+  const { records, isLoading, error } = useAppSelector(
+    (state) => state.activitySlice
   );
 
 
   // For Fetching All Testimonials From Slice
   useEffect(() => {
-    dispatch(getAllTestimonials());
+    dispatch(getAllActivities());
   }, [dispatch]);
 
   return (
-    <MainContent status={isLoading} error={error} to="testimonials">
+    <MainContent status={isLoading} error={error} to="activities">
       <GridList
-        records={testimonials}
+        records={records}
         renderItems={(record) => (
-          <TestimonialsCard
-            id={record._id}
+          <ActivityCard
+            id={record._id!}
             name={record.name}
-            evaluation={record.evaluation!}
-            image={record.image?.url}
+            image={record.image?.url!}
             description={record.description}
           />
         )}
@@ -47,4 +44,4 @@ const Testimonials: React.FC = () => {
   );
 };
 
-export default Testimonials;
+export default Activities;

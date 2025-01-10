@@ -52,7 +52,7 @@ const CardMissionVision:React.FC<TPropsCard> = ({title,description}) => {
     }
 
   return (
-    <div className=" w-full bg-white rounded border-r-8 border-b-8 border-l-2 border-t-2 border-[#262626] p-12 ">
+    <div className=" w-full h-full bg-white rounded border-r-8 border-b-8 border-l-2 border-t-2 border-[#262626] p-12 ">
       <div className="flex justify-end  items-center  gap-3 ">
        <button className="text-4xl  text-white hover:bg-red-400 bg-[#FF8D4C] p-2 rounded-lg"  onClick={handleClickUpdate}>
           <MdEdit/>

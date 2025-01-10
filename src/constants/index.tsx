@@ -11,6 +11,13 @@ import MissionVision from "../pages/mission-vision/MissionVision";
 import Members from "../pages/Member/Members";
 import History from "../pages/history/History";
 import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
+import AdmissionProcess from "../pages/AdmissionProcess/AdmissionProcess";
+import { LuBookOpenCheck } from "react-icons/lu";
+
+import Subjects from "../pages/subjects/Subjects";
+import Activities from "../pages/Activities/Activities";
+import { FaBook } from "react-icons/fa";
+
 import FeeStructures from "../pages/FeeStructures/FeeStructures";
 
 export const DashBoardLinks = [
@@ -42,13 +49,13 @@ export const DashBoardLinks = [
     path: "mission-vision",
     label: "MissionVision",
     icon: <GrOverview />,
-    childComponente: <MissionVision/>,
+    childComponente: <MissionVision />,
   },
   {
     path: "team-members",
     label: "TeamMember",
     icon: <FaUserTie />,
-    childComponente: <Members/>,
+    childComponente: <Members />,
   },
   {
     path: "Specialfeatures",
@@ -57,15 +64,31 @@ export const DashBoardLinks = [
     childComponente: <SpecialFeatures />,
   },
   {
+    path: "admissionProcess",
+    label: "Admission Process",
+    icon: <LuBookOpenCheck />,
+    childComponente: <AdmissionProcess />,
+  },
+  {
     path: "FeeStructures",
     label: "FeeStructures",
     icon: <SiBentobox />,
     childComponente: <FeeStructures />,
   },
   {
+    path: "subjects",
+    label: "Subjects",
+    icon: <FaBook />,
+    childComponente: <Subjects />,
+  },
+  {
+    path: "activities",
+    label: "Activities",
+    icon: <FaBook />,
+    childComponente: <Activities />,
+  },
+  {
     path: "login",
     childComponente: <Login />,
   },
 ];
-
-
