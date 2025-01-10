@@ -10,10 +10,9 @@ import { useNavigate, useParams } from "react-router-dom";
 
 // Thunks
 import {
-  addMissionVision,
-  updateMssionVision,
-
-} from "../../../redux/slice/mission-vision/missionVisionSlice";
+  addSubject,
+  updateSubject,
+} from "../../../redux/slice/subjects/subjectSlice";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
@@ -21,41 +20,41 @@ import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 // React-Hot-Toast
 import toast from "react-hot-toast";
 import Loading from "../../common/Loading/Loading";
+import UploadImage from "../../common/uploadImage/UploadImage";
 
 // Types
 type Inputs = {
-  title: string;
+  name: string;
+  image: string;
   description: string;
 };
 
-const MissionVisionForm: React.FC = () => {
-
+const SubjectForm: React.FC = () => {
   const dispatch = useAppDispatch();
+
+  const { id } = useParams();
 
   // Info From Slice
   const { records, isLoading, error } = useAppSelector(
-    (state) => state.missionVision
+    (state) => state.subjectSlice
   );
 
   const navigate = useNavigate();
 
-  const { Ptitle } = useParams();
-
-  //  Set Values To Inputs From Testimonial
-  const [title, setTitle] = useState("");
+  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
-  const isUpdateMode = typeof Ptitle === "string";
+  const isUpdateMode = typeof id === "string";
 
   useEffect(() => {
     if (isUpdateMode) {
-      const record = records.find((item) => item.title === Ptitle);
+      const record = records.find((item) => item._id === id);
       if (record) {
-        setTitle(record.title);
+        setName(record.name);
         setDescription(record.description);
       }
     }
-  }, [Ptitle, records, isUpdateMode]);
+  }, [id, isUpdateMode, records]);
 
   // Hook-Form
   const {
@@ -65,56 +64,51 @@ const MissionVisionForm: React.FC = () => {
     reset,
   } = useForm<Inputs>({
     defaultValues: {
-      title,
+      name,
       description,
     },
   });
 
+  useEffect(() => {
+    reset({ name, description });
+  }, [name, description, reset]);
+
   // Function To Handle Submit
+  const form = new FormData();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
+    form.append("name", data.name);
+    form.append("description", data.description);
+
     const action = isUpdateMode
-      ? updateMssionVision({ title: Ptitle, data: data })
-      : addMissionVision(data);
+      ? updateSubject({ id: id, data: form })
+      : addSubject(form);
 
     dispatch(action).then(() => {
-      if (isLoading == "Fail") {
-        toast.error("Please Try Again ");
+      if (error) {
+        toast.error("Please Try Again");
       } else {
-        toast.success("done");
-
-        navigate("/mission-vision");
+        toast.success(
+          isUpdateMode ? "Update Successful" : "Addition Successful"
+        );
+        navigate("/subjects");
       }
     });
   };
-
-  useEffect(() => {
-    reset({ title, description });
-  }, [ title, description, reset]);
 
   return (
     <Loading status={isLoading} error={error}>
       <form className="student-form-form" onSubmit={handleSubmit(onSubmit)}>
         {/* Form Fields */}
         <div className="form-group">
-          <label htmlFor="Name">Title</label>
+          <label htmlFor="Name">Name</label>
           <input
-            id="Title"
+            id="Name"
             type="text"
-            placeholder="Enter title"
-            {...register("title", {
-              required: "The Title is Required",
-              validate: (value) => {
-                for (let i = 0; i < records.length; i++) {
-                  if (records[i].title == value) {
-                    return "Title Used Before Please Choose Another Title";
-                  }
-                }
-                return true;
-              },
-            })}
+            placeholder="Enter Name"
+            {...register("name", { required: "The Name is Required" })}
           />
-          {errors.title && (
-            <span className="text-red-400">{errors.title.message}</span>
+          {errors.name && (
+            <span className="text-red-400">{errors.name.message}</span>
           )}
         </div>
         <div className="form-group full-width">
@@ -125,19 +119,20 @@ const MissionVisionForm: React.FC = () => {
             rows={4}
             {...register("description", {
               minLength: { value: 10, message: "Too Short Description" },
-              required: "The Description is Required",
             })}
           ></textarea>
           {errors.description && (
             <span className="text-red-400">{errors.description.message}</span>
           )}
         </div>
+
+        <UploadImage form={form} type="image" records={records}/>
         <button type="submit" className="submit-button">
-          {typeof Ptitle == "string" ? "UPDATE" : "ADD"}
+          {typeof id == "string" ? "UPDATE" : "ADD"}
         </button>
       </form>
     </Loading>
   );
 };
 
-export default MissionVisionForm;
+export default SubjectForm;
