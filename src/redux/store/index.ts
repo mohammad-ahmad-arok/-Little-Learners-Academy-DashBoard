@@ -8,8 +8,9 @@ import memberSlice from "../slice/members/memberSlice"
 import histories from "../slice/historySlice";
 import benefits from "../slice/benefitsSlice";
 import subjectSlice from "../slice/subjects/subjectSlice"
+import activitySlice from "../slice/activities/activitySlice"
 
-export const store=configureStore({reducer:{testimonialSlice,faqs,missionVision,memberSlice,histories ,benefits,subjectSlice}})
+export const store=configureStore({reducer:{testimonialSlice,faqs,missionVision,memberSlice,histories ,benefits,subjectSlice,activitySlice}})
 
 
 

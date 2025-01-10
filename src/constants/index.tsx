@@ -12,6 +12,7 @@ import MissionVision from "../pages/mission-vision/MissionVision";
 import Members from "../pages/Member/Members";
 import History from "../pages/history/History";
 import Subjects from "../pages/subjects/Subjects";
+import Activities from "../pages/Activities/Activities";
 export const DashBoardLinks = [
   {
     path: "benefits",
@@ -54,6 +55,12 @@ export const DashBoardLinks = [
     label: "Subjects",
     icon: <FaBook />,
     childComponente: <Subjects/>,
+  },
+  {
+    path: "activities",
+    label: "Activities",
+    icon: <FaBook />,
+    childComponente: <Activities/>,
   },
   {
     path: "login",

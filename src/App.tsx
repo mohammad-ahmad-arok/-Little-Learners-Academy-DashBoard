@@ -9,6 +9,7 @@ import TestimonialForm from "./components/Forms/TestimonialForm/TestimonialForm"
 import MissionVisionForm from "./components/Forms/MissionVisionForm/MissionVisionForm";
 import MemberForm from "./components/Forms/MemberForm/MemberForm";
 import SubjectForm from "./components/Forms/SubjectForm/SubjectForm";
+import ActivityForm from "./components/Forms/ActivityForm/ActivityForm";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
             );
           })}
               <Route path="testimonials/add" element={<NewItem><TestimonialForm/></NewItem>} />
-              <Route path="testimonials/update/:id" element={<NewItem><TestimonialForm/></NewItem>}  />  
+              <Route path="testimonials/update/:id" element={<NewItem><TestimonialForm/></NewItem>}  />                <Route path="activities/add" element={<NewItem><ActivityForm/></NewItem>} />
+              <Route path="activities/update/:id" element={<NewItem><ActivityForm/></NewItem>}  />  
+
               <Route path="subjects/add" element={<NewItem><SubjectForm/></NewItem>} />
               <Route path="subjects/update/:id" element={<NewItem><SubjectForm/></NewItem>}  />  
               <Route path="team-members/add" element={<NewItem><MemberForm/></NewItem>} />
