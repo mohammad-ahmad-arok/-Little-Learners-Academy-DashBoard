@@ -38,6 +38,7 @@ const Testimonials: React.FC = () => {
             name={record.name}
             evaluation={record.evaluation!}
             image={record.image?.url}
+            description={record.description}
           />
         )}
         grid={true}
