@@ -12,6 +12,7 @@ import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice";
 import subjectSlice from "../slice/subjects/subjectSlice";
 import activitySlice from "../slice/activities/activitySlice";
 
+import feeStructures from "../slice/feeStructureSlice";
 export const store = configureStore({
   reducer: {
     testimonialSlice,
@@ -20,8 +21,8 @@ export const store = configureStore({
     memberSlice,
     histories,
     benefits,
-    subjectSlice,
-    activitySlice,
+    specialFeatures: specialFeaturesReducer,
+    feeStructures,
   },
 });
 

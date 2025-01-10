@@ -19,6 +19,9 @@ import AdmissionProcessForm from "./components/Forms/AdmissionProcessForm/Admiss
 import SubjectForm from "./components/Forms/SubjectForm/SubjectForm";
 import ActivityForm from "./components/Forms/ActivityForm/ActivityForm";
 
+import FeeStructures from "./pages/FeeStructures/FeeStructures";
+import AddEditFeeStructure from "./pages/FeeStructures/AddEditFeeStructure";
+
 function App() {
   return (
     <>
@@ -134,6 +137,17 @@ function App() {
                 <AdmissionProcessForm />
               </NewItem>
             }
+          />
+          <Route path="/special-features" element={<SpecialFeatures />} />
+          <Route
+            path="/add-edit-special-feature"
+            element={<AddEditSpecialFeature />}
+          />
+          <Route path="/fee-structure" element={<FeeStructures />} />
+          <Route path="/add-fee-structure" element={<AddEditFeeStructure />} />
+          <Route
+            path="/edit-fee-structure/:id"
+            element={<AddEditFeeStructure />}
           />
         </Route>
       </Routes>

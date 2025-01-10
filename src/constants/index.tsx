@@ -18,6 +18,7 @@ import Subjects from "../pages/subjects/Subjects";
 import Activities from "../pages/Activities/Activities";
 import { FaBook } from "react-icons/fa";
 
+import FeeStructures from "../pages/FeeStructures/FeeStructures";
 
 export const DashBoardLinks = [
   {
@@ -69,16 +70,22 @@ export const DashBoardLinks = [
     childComponente: <AdmissionProcess />,
   },
   {
+    path: "FeeStructures",
+    label: "FeeStructures",
+    icon: <SiBentobox />,
+    childComponente: <FeeStructures />,
+  },
+  {
     path: "subjects",
     label: "Subjects",
     icon: <FaBook />,
-    childComponente: <Subjects/>,
+    childComponente: <Subjects />,
   },
   {
     path: "activities",
     label: "Activities",
     icon: <FaBook />,
-    childComponente: <Activities/>,
+    childComponente: <Activities />,
   },
   {
     path: "login",
