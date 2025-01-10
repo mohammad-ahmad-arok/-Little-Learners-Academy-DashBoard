@@ -7,8 +7,8 @@ import missionVision from "../slice/mission-vision/missionVisionSlice"
 import memberSlice from "../slice/members/memberSlice"
 import histories from "../slice/historySlice";
 import benefits from "../slice/benefitsSlice";
-
-export const store=configureStore({reducer:{testimonialSlice,faqs,missionVision,memberSlice,histories ,benefits}})
+import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice";
+export const store=configureStore({reducer:{testimonialSlice,faqs,missionVision,memberSlice,histories ,benefits,specialFeatures: specialFeaturesReducer,}})
 
 
 
