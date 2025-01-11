@@ -11,6 +11,7 @@ import benefits from "../slice/benefitsSlice";
 import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice";
 import subjectSlice from "../slice/subjects/subjectSlice";
 import activitySlice from "../slice/activities/activitySlice";
+import eventSlice from "../slice/events/eventSlice"
 
 import feeStructures from "../slice/feeStructureSlice";
 export const store = configureStore({
@@ -23,6 +24,10 @@ export const store = configureStore({
     benefits,
     specialFeatures: specialFeaturesReducer,
     feeStructures,
+    subjectSlice,
+    activitySlice,
+    admissionProcessSlice,
+    eventSlice
   },
 });
 

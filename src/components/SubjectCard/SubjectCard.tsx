@@ -3,7 +3,6 @@ import { MdEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useNavigate } from "react-router-dom";
-import { deleteSubject } from "../../redux/slice/subjects/subjectSlice";
 import toast from "react-hot-toast";
 import Modal from "../Modal/Modal";
 
@@ -12,9 +11,11 @@ type TProps = {
   name: string;
   description: string;
   image: string;
+  to:string,
+  deleteAction:any
 };
 
-const SubjectCard = ({ id, name, description, image }: TProps) => {
+const SubjectCard = ({ id, name, description, image,to,deleteAction }: TProps) => {
   const [open, setOpen] = useState(false);
 
   // Check Error From Slice
@@ -25,12 +26,12 @@ const SubjectCard = ({ id, name, description, image }: TProps) => {
 
   // Function To Handle Navigation To Update Page
   const handleClickUpdate = () => {
-    navigate(`/subjects/update/${id}`);
+    navigate(`/${to}/update/${id}`);
   };
 
   // Function To Handle Delete Item
   const handleClickDelete = () => {
-    dispatch(deleteSubject(id as string));
+    dispatch(deleteAction(id as string));
     if (!error) {
       toast.success("item deleted successfully");
     } else {

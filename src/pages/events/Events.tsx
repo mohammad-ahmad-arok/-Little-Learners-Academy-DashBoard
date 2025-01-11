@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 // Thunks
 
-import { getAllSubjects,deleteSubject } from "../../redux/slice/subjects/subjectSlice";
+import { getAllEvents,deleteEvent } from "../../redux/slice/events/eventSlice";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -12,22 +12,22 @@ import GridList from "../../components/common/GridList/GridList";
 import MainContent from "../../components/common/MainContent/MainContent";
 import SubjectCard from "../../components/SubjectCard/SubjectCard";
 
-const Subjects: React.FC = () => {
+const Events: React.FC = () => {
   const dispatch = useAppDispatch();
 
   // Info From Slice
   const { records, isLoading, error } = useAppSelector(
-    (state) => state.subjectSlice
+    (state) => state.eventSlice
   );
 
 
   // For Fetching All Testimonials From Slice
   useEffect(() => {
-    dispatch(getAllSubjects());
+    dispatch(getAllEvents());
   }, [dispatch]);
 
   return (
-    <MainContent status={isLoading} error={error} to="subjects">
+    <MainContent status={isLoading} error={error} to="events">
       <GridList
         records={records}
         renderItems={(record) => (
@@ -36,8 +36,8 @@ const Subjects: React.FC = () => {
             name={record.name}
             image={record.image?.url!}
             description={record.description}
-            to="subjects"
-            deleteAction={deleteSubject}
+            to="events"
+            deleteAction={deleteEvent}
           />
         )}
         grid={true}
@@ -46,4 +46,4 @@ const Subjects: React.FC = () => {
   );
 };
 
-export default Subjects;
+export default Events;

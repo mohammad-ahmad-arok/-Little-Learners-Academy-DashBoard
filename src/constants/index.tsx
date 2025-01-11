@@ -19,6 +19,7 @@ import Activities from "../pages/Activities/Activities";
 import { FaBook } from "react-icons/fa";
 
 import FeeStructures from "../pages/FeeStructures/FeeStructures";
+import Events from "../pages/events/Events";
 
 export const DashBoardLinks = [
   {
@@ -44,6 +45,12 @@ export const DashBoardLinks = [
     label: "history",
     icon: <SiBentobox />,
     childComponente: <History />,
+  },
+  {
+    path: "events",
+    label: "Events",
+    icon: <SiBentobox />,
+    childComponente: <Events />,
   },
   {
     path: "mission-vision",

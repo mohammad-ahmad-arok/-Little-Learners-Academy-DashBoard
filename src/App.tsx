@@ -21,6 +21,7 @@ import ActivityForm from "./components/Forms/ActivityForm/ActivityForm";
 
 import FeeStructures from "./pages/FeeStructures/FeeStructures";
 import AddEditFeeStructure from "./pages/FeeStructures/AddEditFeeStructure";
+import EventForm from "./components/Forms/EventForm/EventForm";
 
 function App() {
   return (
@@ -75,6 +76,23 @@ function App() {
             element={
               <NewItem>
                 <SubjectForm />
+              </NewItem>
+            }
+          />
+
+          <Route
+            path="events/add"
+            element={
+              <NewItem>
+                <EventForm />
+              </NewItem>
+            }
+          />
+          <Route
+            path="events/update/:id"
+            element={
+              <NewItem>
+                <EventForm />
               </NewItem>
             }
           />

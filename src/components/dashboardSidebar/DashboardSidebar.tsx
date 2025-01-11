@@ -13,7 +13,7 @@ const DashboardSidebar = () => {
         <CgMenuGridR className="text-3xl text-black me-1" />
         <span className="hidden lg:block text-3xl text-black">Dashboard</span>
       </Link>
-      <ul className="mt-10 flex items-center justify-center flex-col lg:items-start">
+      <ul className="mt-10 flex items-center justify-center flex-col lg:items-start  ">
         {DashBoardLinks.map((item, index) => {
           if (item.path == "login" || item.path == "register") {
             return;
