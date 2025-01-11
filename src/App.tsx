@@ -21,6 +21,8 @@ import ActivityForm from "./components/Forms/ActivityForm/ActivityForm";
 
 import FeeStructures from "./pages/FeeStructures/FeeStructures";
 import AddEditFeeStructure from "./pages/FeeStructures/AddEditFeeStructure";
+import Contact from "./pages/Contact/Contact";
+import AddEditContact from "./pages/Contact/AddEditContact";
 
 function App() {
   return (
@@ -149,6 +151,9 @@ function App() {
             path="/edit-fee-structure/:id"
             element={<AddEditFeeStructure />}
           />
+       <Route path="/" element={<Contact />} />
+        <Route path="/contact-messages" element={<Contact />} />
+        <Route path="/add-edit-contact/:id?" element={<AddEditContact />} />
         </Route>
       </Routes>
     </>
