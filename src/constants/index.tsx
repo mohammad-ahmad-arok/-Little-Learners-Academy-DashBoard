@@ -28,12 +28,7 @@ export const DashBoardLinks = [
     icon: <SiBentobox />,
     childComponente: <Benefits />,
   },
-  {
-    path: "Contact",
-    label: "Contact",
-    icon: <SiContactlesspayment />,
-    childComponente: <Contact />,
-  },
+  
   {
     path: "testimonials",
     label: "Testimonials",
@@ -94,7 +89,12 @@ export const DashBoardLinks = [
     icon: <FaBook />,
     childComponente: <Activities />,
   },
-
+  {
+    path: "Contact",
+    label: "Contact",
+    icon: <SiContactlesspayment />,
+    childComponente: <Contact />,
+  },
   {
     path: "login",
     childComponente: <Login />,

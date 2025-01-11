@@ -4,11 +4,9 @@ import { fetchMessages, deleteMessage } from "../../redux/slice/messageSlice";
 import { AppDispatch } from "../../redux/store";
 import { RootState } from "../../redux/store";
 import Loading from "../../components/common/Loading/Loading";
-import { useNavigate } from "react-router-dom";
 
 const Contact: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate(); // Hook to navigate to other routes
   const { messages, loadingStatus, error } = useSelector((state: RootState) => state.messages);
 
   useEffect(() => {
@@ -19,23 +17,10 @@ const Contact: React.FC = () => {
     dispatch(deleteMessage(id));
   };
 
-  const handleAddMessage = () => {
-    navigate("/add-edit-contact"); // Navigate to the Add/Edit page
-  };
-
   return (
     <Loading status={loadingStatus} error={error}>
       <div className="p-8">
         <h1 className="text-3xl font-bold mb-8">Contact Messages</h1>
-
-        {/* Add Message Button */}
-        <button
-          onClick={handleAddMessage}
-          className="px-5 py-2 bg-primary text-white font-medium rounded-lg hover:bg-orange-500 transition-all mb-6"
-        >
-          Add New Message
-        </button>
-
         {/* Table displaying messages */}
         <table className="table-auto w-full border-collapse border border-gray-200">
           <thead>
