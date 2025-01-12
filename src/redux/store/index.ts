@@ -11,7 +11,7 @@ import benefits from "../slice/benefitsSlice";
 import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice";
 import subjectSlice from "../slice/subjects/subjectSlice";
 import activitySlice from "../slice/activities/activitySlice";
-
+import messageReducer from "../slice/messageSlice";
 import feeStructures from "../slice/feeStructureSlice";
 export const store = configureStore({
   reducer: {
@@ -23,6 +23,7 @@ export const store = configureStore({
     benefits,
     specialFeatures: specialFeaturesReducer,
     feeStructures,
+    messages: messageReducer, 
   },
 });
 

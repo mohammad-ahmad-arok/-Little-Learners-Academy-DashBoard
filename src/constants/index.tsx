@@ -2,7 +2,7 @@ import Benefits from "../pages/benefits/Benefits";
 import Testimonials from "../pages/testimonials/Testimonials";
 import Faq from "../pages/FAQ/Faq";
 import Login from "../pages/login/Login";
-import { SiBentobox } from "react-icons/si";
+import { SiBentobox, SiContactlesspayment } from "react-icons/si";
 import { SiLibreofficewriter } from "react-icons/si";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
 import { GrOverview } from "react-icons/gr";
@@ -19,6 +19,7 @@ import Activities from "../pages/Activities/Activities";
 import { FaBook } from "react-icons/fa";
 
 import FeeStructures from "../pages/FeeStructures/FeeStructures";
+import Contact from "../pages/Contact/Contact";
 
 export const DashBoardLinks = [
   {
@@ -27,6 +28,7 @@ export const DashBoardLinks = [
     icon: <SiBentobox />,
     childComponente: <Benefits />,
   },
+  
   {
     path: "testimonials",
     label: "Testimonials",
@@ -88,7 +90,16 @@ export const DashBoardLinks = [
     childComponente: <Activities />,
   },
   {
+    path: "Contact",
+    label: "Contact",
+    icon: <SiContactlesspayment />,
+    childComponente: <Contact />,
+  },
+  {
     path: "login",
     childComponente: <Login />,
   },
 ];
+
+
+// SiContactlesspayment
