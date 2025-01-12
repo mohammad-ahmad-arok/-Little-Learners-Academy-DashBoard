@@ -30,22 +30,17 @@ const Login = () => {
      
       dispatch(Auth(data)).then(()=>{
         navigate("/")
-      })
-
-
-      if(isLoading){
-        return (
-           <div className="flex justify-center items-center h-screen">
-            <ButtonSpinner/>
-           </div>
-        )
-      }
-
-
-
-   
+      })   
   
     };
+
+    if(isLoading=="Pending"){
+      return (
+         <div className="flex justify-center items-center h-screen">
+          <ButtonSpinner/>
+         </div>
+      )
+    }
 
   return (
         <section className="fix-height  m-auto px-7 flex items-center justify-center bg-[#FF8D4C] h-screen">
