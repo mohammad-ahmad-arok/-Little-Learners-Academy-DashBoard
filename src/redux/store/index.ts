@@ -12,12 +12,13 @@ import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice";
 import subjectSlice from "../slice/subjects/subjectSlice";
 import activitySlice from "../slice/activities/activitySlice";
 import eventSlice from "../slice/events/eventSlice"
-
+import authSlice from "../slice/auth/authSlice"
 import feeStructures from "../slice/feeStructureSlice";
 export const store = configureStore({
   reducer: {
     testimonialSlice,
     faqs,
+    authSlice,
     missionVision,
     memberSlice,
     histories,

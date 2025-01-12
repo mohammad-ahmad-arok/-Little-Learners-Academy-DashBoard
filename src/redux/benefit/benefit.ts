@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "https://little-learners-academy-back-end-j3iu.onrender.com/api/benefits";
+const API_URL = "/api/benefits";
 
 // Fetch all benefits
 export const fetchBenefits = createAsyncThunk("benefits/fetchBenefits", async () => {

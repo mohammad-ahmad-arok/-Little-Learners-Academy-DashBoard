@@ -1,7 +1,6 @@
 import Benefits from "../pages/benefits/Benefits";
 import Testimonials from "../pages/testimonials/Testimonials";
 import Faq from "../pages/FAQ/Faq";
-import Login from "../pages/login/Login";
 import { SiBentobox } from "react-icons/si";
 import { SiLibreofficewriter } from "react-icons/si";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
@@ -94,8 +93,5 @@ export const DashBoardLinks = [
     icon: <FaBook />,
     childComponente: <Activities />,
   },
-  {
-    path: "login",
-    childComponente: <Login />,
-  },
+
 ];

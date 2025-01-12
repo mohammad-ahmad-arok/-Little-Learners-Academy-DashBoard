@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = "https://little-learners-academy-back-end-j3iu.onrender.com/api/specialfeatures";
+const BASE_URL = "/api/specialfeatures";
 
 // Fetch all special features
 export const fetchSpecialFeatures = createAsyncThunk("specialFeatures/fetch", async () => {

@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import DashBoardLayout from "./pages/Layout";
 import { DashBoardLinks } from "./constants";
 
@@ -22,12 +22,23 @@ import ActivityForm from "./components/Forms/ActivityForm/ActivityForm";
 import FeeStructures from "./pages/FeeStructures/FeeStructures";
 import AddEditFeeStructure from "./pages/FeeStructures/AddEditFeeStructure";
 import EventForm from "./components/Forms/EventForm/EventForm";
+import Login from "./pages/login/Login";
+import { useAppSelector } from "./redux/hooks";
+import ProtectedRoute from "./services/ProtectedRoute";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<DashBoardLayout />}>
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <DashBoardLayout />
+            </ProtectedRoute>
+          }
+        >
           {DashBoardLinks.map((item, index) => {
             return (
               <Route
@@ -38,7 +49,7 @@ function App() {
             );
           })}
           <Route
-            path="testimonials/add"
+            path="/testimonials/add"
             element={
               <NewItem>
                 <TestimonialForm />
@@ -46,7 +57,7 @@ function App() {
             }
           />
           <Route
-            path="testimonials/update/:id"
+            path="/testimonials/update/:id"
             element={
               <NewItem>
                 <TestimonialForm />
@@ -55,7 +66,7 @@ function App() {
           />
 
           <Route
-            path="activities/update/:id"
+            path="/activities/update/:id"
             element={
               <NewItem>
                 <ActivityForm />
@@ -64,7 +75,7 @@ function App() {
           />
 
           <Route
-            path="subjects/add"
+            path="/subjects/add"
             element={
               <NewItem>
                 <SubjectForm />
@@ -72,7 +83,7 @@ function App() {
             }
           />
           <Route
-            path="subjects/update/:id"
+            path="/subjects/update/:id"
             element={
               <NewItem>
                 <SubjectForm />
@@ -81,7 +92,7 @@ function App() {
           />
 
           <Route
-            path="events/add"
+            path="/events/add"
             element={
               <NewItem>
                 <EventForm />
@@ -89,7 +100,7 @@ function App() {
             }
           />
           <Route
-            path="events/update/:id"
+            path="/events/update/:id"
             element={
               <NewItem>
                 <EventForm />
@@ -98,7 +109,7 @@ function App() {
           />
 
           <Route
-            path="team-members/add"
+            path="/team-members/add"
             element={
               <NewItem>
                 <MemberForm />
@@ -106,7 +117,7 @@ function App() {
             }
           />
           <Route
-            path="team-members/update/:id"
+            path="/team-members/update/:id"
             element={
               <NewItem>
                 <MemberForm />
@@ -114,7 +125,7 @@ function App() {
             }
           />
           <Route
-            path="mission-vision/add"
+            path="/mission-vision/add"
             element={
               <NewItem>
                 <MissionVisionForm />
@@ -122,14 +133,14 @@ function App() {
             }
           />
           <Route
-            path="mission-vision/update/:Ptitle"
+            path="/mission-vision/update/:Ptitle"
             element={
               <NewItem>
                 <MissionVisionForm />
               </NewItem>
             }
           />
-          <Route path="/" element={<Benefits />} />
+          <Route path="" element={<Benefits />} />
           <Route path="/add-benefit" element={<AddEditBenefit />} />
           <Route path="/edit-benefit/:id" element={<AddEditBenefit />} />
           <Route path="/add-edit-history" element={<AddEditHistory />} />
@@ -141,7 +152,7 @@ function App() {
           <Route path="/add-faq" element={<AddEditFaq />} />
           <Route path="/faq/:id" element={<AddEditFaq />} />
           <Route
-            path="admissionProcess/add"
+            path="/admissionProcess/add"
             element={
               <NewItem>
                 <AdmissionProcessForm />
@@ -149,7 +160,7 @@ function App() {
             }
           />
           <Route
-            path="admissionProcess/update/:id"
+            path="/admissionProcess/update/:id"
             element={
               <NewItem>
                 <AdmissionProcessForm />
