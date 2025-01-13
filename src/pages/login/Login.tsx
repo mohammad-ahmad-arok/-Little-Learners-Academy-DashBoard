@@ -2,10 +2,9 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {Auth} from "../../redux/slice/auth/authSlice"
 import toast, { Toaster } from "react-hot-toast";
-import Loading from "../../components/common/Loading/Loading";
-import { useNavigate } from "react-router-dom";
-import DashBoardLayout from "../Layout";
-import ButtonSpinner from "../../components/buttonSpinner/ButtonSpinner";
+import { replace, useNavigate } from "react-router-dom";
+import Lottie from "lottie-react";
+import loading from "../../services/loading.json"
 
 
 type Inputs={
@@ -26,24 +25,18 @@ const Login = () => {
       formState: { errors },
     } = useForm<Inputs>();
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
      
-      dispatch(Auth(data)).then(()=>{
-        navigate("/")
-      })   
-  
+      await dispatch(Auth(data))
+
+      navigate("/",{replace:true})
+    
     };
 
-    if(isLoading=="Pending"){
-      return (
-         <div className="flex justify-center items-center h-screen">
-          <ButtonSpinner/>
-         </div>
-      )
-    }
 
   return (
         <section className="fix-height  m-auto px-7 flex items-center justify-center bg-[#FF8D4C] h-screen">
+
             <Toaster/>
       <div className="m-auto bg-white shadow-xl rounded-lg p-5 w-full md:w-1/3">
         <h1 className="text-3xl font-bold text-[#FF8D4C] mb-5 text-center">Log In</h1>
@@ -77,10 +70,11 @@ const Login = () => {
         </div>
 
         <button type="submit" className="submit-button">
-           LOGIN
+           {isLoading=="Pending" ? <Lottie style={{width:"50px"}} animationData={loading} /> : "LOGIN"}
         </button>
 
-        {error && <p className="text-red-500">{error}</p>}
+
+    
         
 
       </form>

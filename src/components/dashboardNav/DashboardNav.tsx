@@ -7,16 +7,15 @@ import { useAppSelector } from "../../redux/hooks";
 
 const DashboardNav = () => {
   const navigate= useNavigate()
-
-  const {info} =useAppSelector(state=>state.authSlice)
-
+   
+   const name = localStorage.getItem("name")
   return (
     <header className={styles.header}>
       <Navbar />
       <div className={styles.right}>
       <>
             <strong className="text-blue-800 md:text-xl capitalize">
-              {info?.name}
+              {name}
             </strong>
             <button
               onClick={() => {

@@ -4,6 +4,7 @@ import {  createSlice } from "@reduxjs/toolkit";
 // Thunks 
 
 import Auth from "./act/Auth";
+import toast from "react-hot-toast";
 
 
 // Types
@@ -26,6 +27,7 @@ const initialState: TState = {
 
 
 
+
 // Slice
 const authSlice = createSlice({
   name: "auth",
@@ -42,10 +44,12 @@ const authSlice = createSlice({
       state.error = null;
       localStorage.setItem("token",action.payload.token)
       state.info=action.payload.data;
+      localStorage.setItem("name",action.payload.data.name)
     });
     builder.addCase(Auth.rejected, (state,action) => {
       state.isLoading = "Fail";
       state.error = action.payload as string;
+      toast.error(state.error || "Network Error")
     });
   }
 });

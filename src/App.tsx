@@ -25,12 +25,13 @@ import EventForm from "./components/Forms/EventForm/EventForm";
 import Login from "./pages/login/Login";
 import { useAppSelector } from "./redux/hooks";
 import ProtectedRoute from "./services/ProtectedRoute";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login"  element={<Login />} />
         <Route
           path="/"
           element={
@@ -179,6 +180,8 @@ function App() {
             element={<AddEditFeeStructure />}
           />
         </Route>
+
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </>
   );
