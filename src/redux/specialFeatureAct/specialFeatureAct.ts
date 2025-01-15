@@ -6,7 +6,7 @@ const BASE_URL = "/api/specialfeatures";
 // Fetch all special features
 export const fetchSpecialFeatures = createAsyncThunk("specialFeatures/fetch", async () => {
   const response = await axios.get(BASE_URL);
-  return response.data;
+  return response.data.data;
 });
 
 // Add a new special feature
@@ -16,7 +16,7 @@ export const addSpecialFeature = createAsyncThunk("specialFeatures/add", async (
       "Content-Type": "multipart/form-data",
     },
   });
-  return response.data;
+  return response.data.data;
 });
 
 // Edit a special feature
@@ -28,7 +28,7 @@ export const editSpecialFeature = createAsyncThunk(
         "Content-Type": "multipart/form-data",
       },
     });
-    return response.data;
+    return response.data.data;
   }
 );
 

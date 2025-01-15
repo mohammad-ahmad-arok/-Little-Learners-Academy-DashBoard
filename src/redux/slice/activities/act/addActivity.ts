@@ -10,7 +10,7 @@ const addActivity = createAsyncThunk(
           "/api/activities",data
         );
          console.log(res.data)
-        return res.data;
+        return res.data.data;
       } catch (error) {
         if (axios.isAxiosError(error)) {
           return rejectWithValue(error.message);

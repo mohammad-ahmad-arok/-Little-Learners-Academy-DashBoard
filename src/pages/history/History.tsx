@@ -48,7 +48,7 @@ const History: React.FC = () => {
           <p className="text-dimGray text-center">No history entries found.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {histories.map((history) => (
+            {histories.length >0 && histories.map((history) => (
               <div
                 key={history._id}
                 className="bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"

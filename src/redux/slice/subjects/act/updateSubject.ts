@@ -9,7 +9,7 @@ const updateSubject = createAsyncThunk(
         const res = await axios.put(
           `/api/subjects/${info.id}`,info.data
         );
-        return res.data;
+        return res.data.data;
       } catch (error) {
         if (axios.isAxiosError(error)) {
           return rejectWithValue(error.message);

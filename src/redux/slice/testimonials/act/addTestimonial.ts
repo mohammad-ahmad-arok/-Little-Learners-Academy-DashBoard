@@ -10,7 +10,7 @@ const addTestimonail = createAsyncThunk(
           "/api/testimonials",data
         );
   
-        return res.data;
+        return res.data.data;
       } catch (error) {
         if (axios.isAxiosError(error)) {
           return rejectWithValue(error.message);

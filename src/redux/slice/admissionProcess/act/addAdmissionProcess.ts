@@ -10,7 +10,7 @@ const addAdmissionProcess = createAsyncThunk(
     try {
       const res = await axios.post("/api/admission-process", data);
 
-      return res.data;
+      return res.data.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
         return rejectWithValue(error.message);

@@ -74,6 +74,14 @@ function App() {
               </NewItem>
             }
           />
+                 <Route
+            path="/activities/add"
+            element={
+              <NewItem>
+                <ActivityForm />
+              </NewItem>
+            }
+          />
 
           <Route
             path="/subjects/add"
