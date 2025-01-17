@@ -11,7 +11,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import GridList from "../../components/common/GridList/GridList";
 import MainContent from "../../components/common/MainContent/MainContent";
 import ActivityCard from "../../components/ActivityCard/ActivityCard";
-
+import {deleteStudentSupport} from "../../redux/slice/studentSupport/studentSupportSlice";
 const StudentSupports: React.FC = () => {
   const dispatch = useAppDispatch();
 
@@ -37,6 +37,7 @@ const StudentSupports: React.FC = () => {
             name={record.name}
             image={record.image?.url!}
             description={record.description}
+            handleDelete={deleteStudentSupport}
           />
         )}
         grid={true}
