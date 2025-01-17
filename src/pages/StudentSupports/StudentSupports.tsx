@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 // Thunks
 
-import { getAllActivities } from "../../redux/slice/activities/activitySlice";
+import { getAllStudentSupports } from "../../redux/slice/studentSupport/studentSupportSlice";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -12,27 +12,27 @@ import GridList from "../../components/common/GridList/GridList";
 import MainContent from "../../components/common/MainContent/MainContent";
 import ActivityCard from "../../components/ActivityCard/ActivityCard";
 
-const Activities: React.FC = () => {
+const StudentSupports: React.FC = () => {
   const dispatch = useAppDispatch();
 
   // Info From Slice
   const { records, isLoading, error } = useAppSelector(
-    (state) => state.activitySlice
+    (state) => state.StudentSupport
   );
 
 
   // For Fetching All Testimonials From Slice
   useEffect(() => {
-    dispatch(getAllActivities());
+    dispatch(getAllStudentSupports());
   }, [dispatch]);
 
   return (
-    <MainContent status={isLoading} error={error} to="activities">
+    <MainContent status={isLoading} error={error} to="student-support">
       <GridList
         records={records}
         renderItems={(record) => (
           <ActivityCard
-            to="activities"
+            to="student-support"
             id={record._id!}
             name={record.name}
             image={record.image?.url!}
@@ -45,4 +45,4 @@ const Activities: React.FC = () => {
   );
 };
 
-export default Activities;
+export default StudentSupports;

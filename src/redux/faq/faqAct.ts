@@ -12,6 +12,7 @@ export const createFAQ = createAsyncThunk(
   "faqs/createFAQ",
   async (faq: { question: string; answer: string }) => {
     const response = await axios.post("/api/commonquestions", faq);
+    console.log(response.data.data)
     return response.data.data;
   }
 );

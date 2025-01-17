@@ -26,12 +26,13 @@ import Login from "./pages/login/Login";
 import { useAppSelector } from "./redux/hooks";
 import ProtectedRoute from "./services/ProtectedRoute";
 import NotFound from "./pages/NotFound/NotFound";
+import StudentSupportForm from "./components/Forms/StudentSupportForm/StudentSupportForm";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/login"  element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route
           path="/"
           element={
@@ -74,11 +75,28 @@ function App() {
               </NewItem>
             }
           />
-                 <Route
+          <Route
             path="/activities/add"
             element={
               <NewItem>
                 <ActivityForm />
+              </NewItem>
+            }
+          />
+
+          <Route
+            path="/student-support/update/:id"
+            element={
+              <NewItem>
+                <StudentSupportForm />
+              </NewItem>
+            }
+          />
+          <Route
+            path="/student-support/add"
+            element={
+              <NewItem>
+                <StudentSupportForm />
               </NewItem>
             }
           />
@@ -189,7 +207,7 @@ function App() {
           />
         </Route>
 
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

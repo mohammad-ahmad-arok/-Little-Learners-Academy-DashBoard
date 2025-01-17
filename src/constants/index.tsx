@@ -19,6 +19,7 @@ import { FaBook } from "react-icons/fa";
 
 import FeeStructures from "../pages/FeeStructures/FeeStructures";
 import Events from "../pages/events/Events";
+import StudentSupports from "../pages/StudentSupports/StudentSupports";
 
 export const DashBoardLinks = [
   {
@@ -32,6 +33,12 @@ export const DashBoardLinks = [
     label: "Testimonials",
     icon: <SiLibreofficewriter />,
     childComponente: <Testimonials />,
+  },
+  {
+    path: "student-support",
+    label: "StudentSupports",
+    icon: <SiLibreofficewriter />,
+    childComponente: <StudentSupports />,
   },
   {
     path: "faq",

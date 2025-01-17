@@ -14,6 +14,7 @@ import activitySlice from "../slice/activities/activitySlice";
 import eventSlice from "../slice/events/eventSlice"
 import authSlice from "../slice/auth/authSlice"
 import feeStructures from "../slice/feeStructureSlice";
+import StudentSupport from "../slice/studentSupport/studentSupportSlice"
 export const store = configureStore({
   reducer: {
     testimonialSlice,
@@ -28,7 +29,8 @@ export const store = configureStore({
     subjectSlice,
     activitySlice,
     admissionProcessSlice,
-    eventSlice
+    eventSlice,
+    StudentSupport
   },
 });
 

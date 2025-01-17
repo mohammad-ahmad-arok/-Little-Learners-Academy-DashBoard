@@ -15,8 +15,9 @@ interface IProps {
   name: string;
   description: string;
   image: string;
+  to:string
 }
-const ActivityCard: React.FC<IProps> = ({ id,image, name, description }) => {
+const ActivityCard: React.FC<IProps> = ({ id,image, name, description ,to}) => {
 
   const [open, setOpen] = useState(false);
 
@@ -28,7 +29,7 @@ const ActivityCard: React.FC<IProps> = ({ id,image, name, description }) => {
 
   // Function To Handle Navigation To Update Page
   const handleClickUpdate = () => {
-    navigate(`/activities/update/${id}`);
+    navigate(`/${to}/update/${id}`);
   };
 
   // Function To Handle Delete Item
