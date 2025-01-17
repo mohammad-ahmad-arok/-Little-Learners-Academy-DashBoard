@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import DashBoardLayout from "./pages/Layout";
 import { DashBoardLinks } from "./constants";
 
@@ -23,7 +23,6 @@ import FeeStructures from "./pages/FeeStructures/FeeStructures";
 import AddEditFeeStructure from "./pages/FeeStructures/AddEditFeeStructure";
 import EventForm from "./components/Forms/EventForm/EventForm";
 import Login from "./pages/login/Login";
-import { useAppSelector } from "./redux/hooks";
 import ProtectedRoute from "./services/ProtectedRoute";
 import NotFound from "./pages/NotFound/NotFound";
 import StudentSupportForm from "./components/Forms/StudentSupportForm/StudentSupportForm";

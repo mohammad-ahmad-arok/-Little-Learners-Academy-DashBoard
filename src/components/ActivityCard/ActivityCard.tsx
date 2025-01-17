@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
-import { deleteActivity } from "../../redux/slice/activities/activitySlice";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Modal from "../Modal/Modal";

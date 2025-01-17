@@ -37,7 +37,7 @@ export const DashBoardLinks = [
   {
     path: "student-support",
     label: "StudentSupports",
-    icon: <SiLibreofficewriter />,
+    icon: <SiBentobox />,
     childComponente: <StudentSupports />,
   },
   {
