@@ -13,6 +13,8 @@ import History from "../pages/history/History";
 import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
 import AdmissionProcess from "../pages/AdmissionProcess/AdmissionProcess";
 import { LuBookOpenCheck } from "react-icons/lu";
+import { BsFillHouseGearFill } from "react-icons/bs";
+import Rooms from "../pages/rooms/Rooms";
 
 import Subjects from "../pages/subjects/Subjects";
 import Activities from "../pages/Activities/Activities";
@@ -28,7 +30,7 @@ export const DashBoardLinks = [
     icon: <SiBentobox />,
     childComponente: <Benefits />,
   },
-  
+
   {
     path: "testimonials",
     label: "Testimonials",
@@ -99,7 +101,12 @@ export const DashBoardLinks = [
     path: "login",
     childComponente: <Login />,
   },
+  {
+    path: "/rooms",
+    label: "Rooms",
+    icon: <BsFillHouseGearFill />,
+    childComponente: <Rooms />,
+  },
 ];
-
 
 // SiContactlesspayment
