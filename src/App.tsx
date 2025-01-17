@@ -22,6 +22,7 @@ import ActivityForm from "./components/Forms/ActivityForm/ActivityForm";
 import FeeStructures from "./pages/FeeStructures/FeeStructures";
 import AddEditFeeStructure from "./pages/FeeStructures/AddEditFeeStructure";
 import Contact from "./pages/Contact/Contact";
+import Activities from "./pages/Activities/Activities";
 
 
 function App() {
@@ -55,14 +56,7 @@ function App() {
             }
           />
 
-          <Route
-            path="activities/update/:id"
-            element={
-              <NewItem>
-                <ActivityForm />
-              </NewItem>
-            }
-          />
+   
 
           <Route
             path="subjects/add"
@@ -153,7 +147,28 @@ function App() {
           />
          <Route path="/" element={<Contact />} />
           <Route path="/contact-messages" element={<Contact />} />
-        
+          
+                 {/* Add Activity Routes */}
+                 <Route
+            path="activities"
+            element={<Activities />} 
+          />
+          <Route
+            path="activities/add"
+            element={
+              <NewItem>
+                <ActivityForm />
+              </NewItem>
+            }
+          />
+          <Route
+            path="activities/update/:id"
+            element={
+              <NewItem>
+                <ActivityForm />
+              </NewItem>
+            }
+          />
         </Route>
       </Routes>
     </>
