@@ -14,6 +14,7 @@ import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
 import AdmissionProcess from "../pages/AdmissionProcess/AdmissionProcess";
 import { LuBookOpenCheck } from "react-icons/lu";
 import { BsFillHouseGearFill } from "react-icons/bs";
+import { GrServices } from "react-icons/gr";
 import Rooms from "../pages/rooms/Rooms";
 
 import Subjects from "../pages/subjects/Subjects";
@@ -22,6 +23,7 @@ import { FaBook } from "react-icons/fa";
 
 import FeeStructures from "../pages/FeeStructures/FeeStructures";
 import Contact from "../pages/Contact/Contact";
+import { AdditionalServices } from "../pages/additionalServices/AdditionalServices";
 
 export const DashBoardLinks = [
   {
@@ -98,14 +100,20 @@ export const DashBoardLinks = [
     childComponente: <Contact />,
   },
   {
-    path: "login",
-    childComponente: <Login />,
-  },
-  {
     path: "/rooms",
     label: "Rooms",
     icon: <BsFillHouseGearFill />,
     childComponente: <Rooms />,
+  },
+  {
+    path: "/additionalservices",
+    label: "Additional Services",
+    icon: <GrServices />,
+    childComponente: <AdditionalServices />,
+  },
+  {
+    path: "login",
+    childComponente: <Login />,
   },
 ];
 
