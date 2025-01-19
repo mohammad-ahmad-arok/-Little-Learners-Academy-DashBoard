@@ -3,16 +3,17 @@ import { configureStore } from "@reduxjs/toolkit";
 // Slices
 import faqs from "../slice/Faq/faqSlice";
 import testimonialSlice from "../slice/testimonials/testimonialSlice";
-import admissionProcessSlice from "../slice/admissionProcess/admissionProcessSlice";
 import missionVision from "../slice/mission-vision/missionVisionSlice";
 import memberSlice from "../slice/members/memberSlice";
 import histories from "../slice/historySlice";
 import benefits from "../slice/benefitsSlice";
 import specialFeaturesReducer from "../../redux/slice/specialFeaturesSlice";
-import subjectSlice from "../slice/subjects/subjectSlice";
-import activitySlice from "../slice/activities/activitySlice";
+import subjectSlice from "../slice/subjects/subjectSlice"; 
 import messageReducer from "../slice/messageSlice";
 import feeStructures from "../slice/feeStructureSlice";
+import admissionProcessReducer from "../slice/admissionProcess/admissionProcessSlice";
+import activityReducer from "../slice/activities/activitySlice";  
+
 export const store = configureStore({
   reducer: {
     testimonialSlice,
@@ -24,6 +25,9 @@ export const store = configureStore({
     specialFeatures: specialFeaturesReducer,
     feeStructures,
     messages: messageReducer, 
+    admissionProcessSlice: admissionProcessReducer,
+    activitySlice: activityReducer,
+    subjectSlice, 
   },
 });
 

@@ -19,8 +19,6 @@ const AdmissionProcess = () => {
   useEffect(() => {
     dispatch(getAllAdmissionProcess());
   }, [dispatch]);
-
-
   const navigate = useNavigate();
 
   // Function To Handle Delete Item
@@ -53,37 +51,38 @@ const AdmissionProcess = () => {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {admissionProcess.map((item) => (
-                  <tr
-                    key={item._id}
-                    className="hover:bg-gray-50 transition-all"
+              {admissionProcess.map((item, index) => (
+            <tr
+              key={item._id || index} 
+              className="hover:bg-gray-50 transition-all"
+            >
+              <td className="px-6 py-4  text-sm font-medium text-gray-900">
+                {item.step}
+              </td>
+              <td className="px-6 py-4  text-sm text-gray-500">
+                {item.description}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm">
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() =>
+                      navigate(`/admissionProcess/update/${item._id}`)
+                    }
+                    className="px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-orange-500 transition-all"
                   >
-                    <td className="px-6 py-4  text-sm font-medium text-gray-900">
-                      {item.step}
-                    </td>
-                    <td className="px-6 py-4  text-sm text-gray-500">
-                      {item.description}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm">
-                      <div className="flex items-center gap-3">
-                        <button
-                          onClick={() =>
-                            navigate(`/admissionProcess/update/${item._id}`)
-                          }
-                          className="px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-orange-500 transition-all"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          onClick={() => handleDelete(item._id)}
-                          className="px-4 py-2 bg-red-400 text-white font-medium rounded-lg hover:bg-red-500 transition-all"
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(item._id)}
+                    className="px-4 py-2 bg-red-400 text-white font-medium rounded-lg hover:bg-red-500 transition-all"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
+
               </tbody>
             </table>
           </div>

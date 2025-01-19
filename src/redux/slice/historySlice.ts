@@ -31,15 +31,17 @@ const historySlice = createSlice({
         state.error = null;
       })
       .addCase(fetchHistories.fulfilled, (state, action) => {
+        console.log("Fetched Histories:", action.payload); 
         state.loading = false;
-        state.histories = action.payload;
+        state.histories = Array.isArray(action.payload) ? action.payload : []; 
       })
+      
       .addCase(fetchHistories.rejected, (state) => {
         state.loading = false;
         state.error = "Failed to fetch histories.";
       })
       .addCase(createHistory.fulfilled, (state, action) => {
-        state.histories.push(action.payload);
+        state.histories.push(action.payload); 
       })
       .addCase(editHistory.fulfilled, (state, action) => {
         state.histories = state.histories.map((history) =>

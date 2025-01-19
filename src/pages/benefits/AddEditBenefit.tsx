@@ -7,7 +7,7 @@ import { AppDispatch } from "../../redux/store";
 const AddEditBenefit: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
-  const { id } = useParams(); // Get the ID for editing (optional)
+  const { id } = useParams(); 
 
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");

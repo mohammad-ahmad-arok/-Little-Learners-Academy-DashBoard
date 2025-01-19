@@ -8,7 +8,7 @@ const getAllAdmissionProcess = createAsyncThunk(
     try {
       const res = await axios.get("/api/admission-process");
 
-      return res.data.data;
+      return res.data.data; 
     } catch (error) {
       if (axios.isAxiosError(error)) {
         return rejectWithValue(error.message);

@@ -8,7 +8,7 @@ import deleteAdmissionProcess from "./act/deleteAdmissionProcess";
 
 // Types
 export interface TypeAdmissionProcess {
-  _id?: string;
+  _id: string;
   step: string;
   description: string;
 }
@@ -39,7 +39,7 @@ const admissionProcessSlice = createSlice({
     builder.addCase(getAllAdmissionProcess.fulfilled, (state, action) => {
       state.isLoading = "Success";
       state.error = null;
-      state.admissionProcess = action.payload;
+      state.admissionProcess = action.payload; // Updated to handle response.data.data
     });
     builder.addCase(getAllAdmissionProcess.rejected, (state, action) => {
       state.isLoading = "Fail";

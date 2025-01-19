@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
 // Thunks
-
 import { getAllActivities } from "../../redux/slice/activities/activitySlice";
 
 // Redux
@@ -20,8 +19,7 @@ const Activities: React.FC = () => {
     (state) => state.activitySlice
   );
 
-
-  // For Fetching All Testimonials From Slice
+  // For Fetching All Activities From Slice
   useEffect(() => {
     dispatch(getAllActivities());
   }, [dispatch]);
@@ -32,10 +30,10 @@ const Activities: React.FC = () => {
         records={records}
         renderItems={(record) => (
           <ActivityCard
-            id={record._id!}
-            name={record.name}
-            image={record.image?.url!}
-            description={record.description}
+            id={record._id || ''}  
+            name={record.name || 'Untitled Activity'}  // Default name if undefined
+            image={record.image?.url || '/default-image.png'}  // Provide default image
+            description={record.description || 'No description available'}  // Default description
           />
         )}
         grid={true}

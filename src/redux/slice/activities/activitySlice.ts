@@ -1,7 +1,6 @@
-import {  createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-
-// Thunks 
+// Thunks
 import getAllActivities from "./act/getAllActivities";
 import addActivity from "./act/addActivity";
 import deleteActivity from "./act/deleteActivity";
@@ -11,7 +10,7 @@ import updateActivity from "./act/updateActivity";
 export interface IActivity {
   _id?: string;
   name: string;
-  image?: {url:string,public_id:string};
+  image?: { url: string; public_id: string };
   description: string;
 }
 
@@ -28,15 +27,11 @@ const initialState: TState = {
   error: null,
 };
 
-
-
-
 // Slice
 const activitySlice = createSlice({
   name: "activity",
   initialState,
-  reducers: {
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getAllActivities.pending, (state) => {
       state.isLoading = "Pending";
@@ -47,7 +42,7 @@ const activitySlice = createSlice({
       state.error = null;
       state.records = action.payload;
     });
-    builder.addCase(getAllActivities.rejected, (state,action) => {
+    builder.addCase(getAllActivities.rejected, (state, action) => {
       state.isLoading = "Fail";
       state.error = action.payload as string;
     });
@@ -60,7 +55,7 @@ const activitySlice = createSlice({
       state.error = null;
       state.records.push(action.payload);
     });
-    builder.addCase(addActivity.rejected, (state,action) => {
+    builder.addCase(addActivity.rejected, (state, action) => {
       state.isLoading = "Fail";
       state.error = action.payload as string;
     });
@@ -71,11 +66,11 @@ const activitySlice = createSlice({
     builder.addCase(updateActivity.fulfilled, (state, action) => {
       state.isLoading = "Success";
       state.error = null;
-      state.records = state.records.map((testimonial) =>
-        testimonial._id === action.payload._id ? action.payload : testimonial
+      state.records = state.records.map((activity) =>
+        activity._id === action.payload._id ? action.payload : activity
       );
     });
-    builder.addCase(updateActivity.rejected, (state,action) => {
+    builder.addCase(updateActivity.rejected, (state, action) => {
       state.isLoading = "Fail";
       state.error = action.payload as string;
     });
@@ -86,15 +81,15 @@ const activitySlice = createSlice({
     builder.addCase(deleteActivity.fulfilled, (state, action) => {
       state.isLoading = "Success";
       state.error = null;
-      state.records=state.records.filter((item)=>item._id!==action.payload);
+      state.records = state.records.filter((item) => item._id !== action.payload);
     });
-    builder.addCase(deleteActivity.rejected, (state,action) => {
+    builder.addCase(deleteActivity.rejected, (state, action) => {
       state.isLoading = "Fail";
       state.error = action.payload as string;
     });
-  }
+  },
 });
 
 export default activitySlice.reducer;
 
-export { getAllActivities,addActivity,updateActivity,deleteActivity };
+export { getAllActivities, addActivity, updateActivity, deleteActivity };

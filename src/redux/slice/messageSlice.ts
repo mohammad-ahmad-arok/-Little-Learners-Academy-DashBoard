@@ -19,15 +19,18 @@ const initialState: MessageState = {
   error: null,
 };
 
-// Thunk for fetching all messages
 export const fetchMessages = createAsyncThunk("messages/fetchAll", async (_, thunkAPI) => {
   try {
     const response = await axios.get(API_URL);
-    return response.data;
-  } catch (error: any) {
-    return thunkAPI.rejectWithValue(error.response?.data?.message || "Failed to fetch messages");
+    console.log("API Response:", response.data); // Debugging line
+    return Array.isArray(response.data) ? response.data : []; // Ensure it's always an array
+  } catch (error) {
+    return thunkAPI.rejectWithValue(
+      axios.isAxiosError(error) ? error.response?.data?.message || "Failed to fetch messages" : "An error occurred"
+    );
   }
 });
+
 
 // Thunk for fetching a single message
 export const fetchMessageById = createAsyncThunk("messages/fetchById", async (id: string, thunkAPI) => {
