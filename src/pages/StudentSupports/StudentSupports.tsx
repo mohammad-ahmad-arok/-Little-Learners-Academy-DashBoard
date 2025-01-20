@@ -4,6 +4,8 @@ import React, { useEffect } from "react";
 
 import { getAllStudentSupports } from "../../redux/slice/studentSupport/studentSupportSlice";
 
+import {deleteStudentSupport} from "../../redux/slice/studentSupport/studentSupportSlice"
+
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
@@ -37,6 +39,7 @@ const StudentSupports: React.FC = () => {
             name={record.name}
             image={record.image?.url!}
             description={record.description}
+            handleDelete={deleteStudentSupport}
           />
         )}
         grid={true}

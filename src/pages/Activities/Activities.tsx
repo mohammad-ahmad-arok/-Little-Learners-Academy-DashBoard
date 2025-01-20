@@ -7,6 +7,8 @@ import { getAllActivities } from "../../redux/slice/activities/activitySlice";
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
+import {deleteActivity} from "../../redux/slice/activities/activitySlice"
+
 // Component
 import GridList from "../../components/common/GridList/GridList";
 import MainContent from "../../components/common/MainContent/MainContent";
@@ -37,6 +39,7 @@ const Activities: React.FC = () => {
             name={record.name}
             image={record.image?.url!}
             description={record.description}
+            handleDelete={deleteActivity}
           />
         )}
         grid={true}

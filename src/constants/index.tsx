@@ -1,7 +1,8 @@
 import Benefits from "../pages/benefits/Benefits";
 import Testimonials from "../pages/testimonials/Testimonials";
 import Faq from "../pages/FAQ/Faq";
-import { SiBentobox } from "react-icons/si";
+import Login from "../pages/login/Login";
+import { SiBentobox, SiContactlesspayment } from "react-icons/si";
 import { SiLibreofficewriter } from "react-icons/si";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
 import { GrOverview } from "react-icons/gr";
@@ -12,14 +13,17 @@ import History from "../pages/history/History";
 import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
 import AdmissionProcess from "../pages/AdmissionProcess/AdmissionProcess";
 import { LuBookOpenCheck } from "react-icons/lu";
+import { BsFillHouseGearFill } from "react-icons/bs";
+import { GrServices } from "react-icons/gr";
+import Rooms from "../pages/rooms/Rooms";
 
 import Subjects from "../pages/subjects/Subjects";
 import Activities from "../pages/Activities/Activities";
 import { FaBook } from "react-icons/fa";
 
 import FeeStructures from "../pages/FeeStructures/FeeStructures";
-import Events from "../pages/events/Events";
-import StudentSupports from "../pages/StudentSupports/StudentSupports";
+import Contact from "../pages/Contact/Contact";
+import { AdditionalServices } from "../pages/additionalServices/AdditionalServices";
 
 export const DashBoardLinks = [
   {
@@ -28,17 +32,12 @@ export const DashBoardLinks = [
     icon: <SiBentobox />,
     childComponente: <Benefits />,
   },
+
   {
     path: "testimonials",
     label: "Testimonials",
     icon: <SiLibreofficewriter />,
     childComponente: <Testimonials />,
-  },
-  {
-    path: "student-support",
-    label: "StudentSupports",
-    icon: <SiLibreofficewriter />,
-    childComponente: <StudentSupports />,
   },
   {
     path: "faq",
@@ -51,12 +50,6 @@ export const DashBoardLinks = [
     label: "history",
     icon: <SiBentobox />,
     childComponente: <History />,
-  },
-  {
-    path: "events",
-    label: "Events",
-    icon: <SiBentobox />,
-    childComponente: <Events />,
   },
   {
     path: "mission-vision",
@@ -100,5 +93,24 @@ export const DashBoardLinks = [
     icon: <FaBook />,
     childComponente: <Activities />,
   },
-
+  {
+    path: "Contact",
+    label: "Contact",
+    icon: <SiContactlesspayment />,
+    childComponente: <Contact />,
+  },
+  {
+    path: "/rooms",
+    label: "Rooms",
+    icon: <BsFillHouseGearFill />,
+    childComponente: <Rooms />,
+  },
+  {
+    path: "/additionalservices",
+    label: "Additional Services",
+    icon: <GrServices />,
+    childComponente: <AdditionalServices />,
+  },
 ];
+
+// SiContactlesspayment
