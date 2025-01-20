@@ -14,7 +14,8 @@ interface IProps {
   name: string;
   description: string;
   image: string;
-  to:string
+  to:string,
+  handleDelete:any
 }
 const ActivityCard: React.FC<IProps> = ({ id,image, name, description ,to,handleDelete}) => {
 
@@ -33,7 +34,7 @@ const ActivityCard: React.FC<IProps> = ({ id,image, name, description ,to,handle
 
   // Function To Handle Delete Item
   const handleClickDelete = () => {
-    dispatch(deleteActivity(id as string));
+    dispatch(handleDelete(id as string));
     if (!error) {
       toast.success("item deleted successfully");
     } else {

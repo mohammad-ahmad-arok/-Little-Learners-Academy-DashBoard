@@ -24,6 +24,7 @@ import { FaBook } from "react-icons/fa";
 import FeeStructures from "../pages/FeeStructures/FeeStructures";
 import Contact from "../pages/Contact/Contact";
 import { AdditionalServices } from "../pages/additionalServices/AdditionalServices";
+import StudentSupports from "../pages/StudentSupports/StudentSupports";
 
 export const DashBoardLinks = [
   {
