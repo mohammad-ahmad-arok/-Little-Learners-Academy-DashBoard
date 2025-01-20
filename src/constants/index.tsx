@@ -40,6 +40,12 @@ export const DashBoardLinks = [
     childComponente: <Testimonials />,
   },
   {
+    path: "student-support",
+    label: "StudentSupports",
+    icon: <SiLibreofficewriter />,
+    childComponente: <StudentSupports />,
+  },
+  {
     path: "faq",
     label: "FAQ",
     icon: <FaPersonCircleQuestion />,

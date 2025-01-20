@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
-import { deleteActivity } from "../../redux/slice/activities/activitySlice";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Modal from "../Modal/Modal";
@@ -16,7 +15,6 @@ interface IProps {
   description: string;
   image: string;
   to:string
-  handleDelete:any
 }
 const ActivityCard: React.FC<IProps> = ({ id,image, name, description ,to,handleDelete}) => {
 
@@ -35,7 +33,7 @@ const ActivityCard: React.FC<IProps> = ({ id,image, name, description ,to,handle
 
   // Function To Handle Delete Item
   const handleClickDelete = () => {
-    dispatch(handleDelete(id as string));
+    dispatch(deleteActivity(id as string));
     if (!error) {
       toast.success("item deleted successfully");
     } else {
