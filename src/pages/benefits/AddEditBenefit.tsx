@@ -1,13 +1,17 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createBenefit, editBenefit } from "../../redux/benefit/benefit";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createBenefit, editBenefit, fetchBenefits } from "../../redux/benefit/benefit";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppDispatch } from "../../redux/store";
+import { RootState } from "../../redux/store"; // Assuming you have this type in your store
 
 const AddEditBenefit: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
-  const { id } = useParams(); 
+  const { id } = useParams();
+
+  // Redux state: assuming benefits is part of the Redux store
+  const { benefits } = useSelector((state: RootState) => state.benefits);
 
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
@@ -39,6 +43,24 @@ const AddEditBenefit: React.FC = () => {
 
     navigate("/"); // Redirect back to the Benefits page
   };
+
+  // Effect for loading existing benefit when editing
+  useEffect(() => {
+    if (id) {
+      const existingBenefit = benefits.find((benefit) => benefit._id === id);
+      if (existingBenefit) {
+        setTitle(existingBenefit.title);
+        setDescription(existingBenefit.description);
+      }
+    }
+  }, [id, benefits]);
+
+  // Fetch benefits on initial load if the benefits array is empty
+  useEffect(() => {
+    if (benefits.length === 0) {
+      dispatch(fetchBenefits());
+    }
+  }, [dispatch, benefits.length]);
 
   return (
     <div className="min-h-screen flex flex-col justify-start p-8">

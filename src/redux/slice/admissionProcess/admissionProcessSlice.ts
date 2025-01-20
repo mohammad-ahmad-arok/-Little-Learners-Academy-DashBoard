@@ -39,7 +39,7 @@ const admissionProcessSlice = createSlice({
     builder.addCase(getAllAdmissionProcess.fulfilled, (state, action) => {
       state.isLoading = "Success";
       state.error = null;
-      state.admissionProcess = action.payload; // Updated to handle response.data.data
+      state.admissionProcess = action.payload; // Handle response.data.data
     });
     builder.addCase(getAllAdmissionProcess.rejected, (state, action) => {
       state.isLoading = "Fail";
@@ -67,7 +67,7 @@ const admissionProcessSlice = createSlice({
       state.error = null;
       state.admissionProcess = state.admissionProcess.map((admissionProcess) =>
         admissionProcess._id === action.payload._id
-          ? action.payload
+          ? { ...admissionProcess, ...action.payload } // Update the item
           : admissionProcess
       );
     });
@@ -92,6 +92,7 @@ const admissionProcessSlice = createSlice({
     });
   },
 });
+
 
 export default admissionProcessSlice.reducer;
 

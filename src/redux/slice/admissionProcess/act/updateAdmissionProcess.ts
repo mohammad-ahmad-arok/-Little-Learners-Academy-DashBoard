@@ -10,8 +10,7 @@ const updateAdmissionProcess = createAsyncThunk(
         `/api/admission-process/${info.id}`,
         info.data
       );
-
-      return res.data; 
+      return res.data.data; // Access response.data.data for updated data
     } catch (error) {
       if (axios.isAxiosError(error)) {
         return rejectWithValue(error.message);

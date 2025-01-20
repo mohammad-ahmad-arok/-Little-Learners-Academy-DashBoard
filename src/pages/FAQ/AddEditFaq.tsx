@@ -1,22 +1,44 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { AppDispatch } from "../../redux/store";
-import { createFAQ, editFAQ } from "../../redux/faq/faqAct";
+import { AppDispatch, RootState } from "../../redux/store";
+import { createFAQ, editFAQ, fetchFAQs } from "../../redux/faq/faqAct";
 
 const AddEditFaq = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const { id } = useParams();
 
+  // Get existing FAQs from Redux state
+  const { faqs } = useSelector((state: RootState) => state.faqs);
+
+  // Local state for form inputs
   const [question, setQuestion] = useState<string>("");
   const [answer, setAnswer] = useState<string>("");
+
+  // Load existing data when editing
+  useEffect(() => {
+    if (id) {
+      const existingFaq = faqs.find((faq) => faq._id === id);
+      if (existingFaq) {
+        setQuestion(existingFaq.question);
+        setAnswer(existingFaq.answer);
+      }
+    }
+  }, [id, faqs]); // Runs when id or faqs change
+
+  // Fetch FAQs when component mounts (only if FAQs are empty)
+  useEffect(() => {
+    if (faqs.length === 0) {
+      dispatch(fetchFAQs());
+    }
+  }, [dispatch, faqs.length]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (id) {
-      dispatch(editFAQ({ id: id, faq: { question, answer } }));
+      dispatch(editFAQ({ id, faq: { question, answer } }));
     } else {
       dispatch(createFAQ({ question, answer }));
     }
@@ -35,7 +57,7 @@ const AddEditFaq = () => {
       >
         <div>
           <label className="block text-dimBlack font-medium mb-2">
-            question:
+            Question:
           </label>
           <input
             type="text"
@@ -47,7 +69,7 @@ const AddEditFaq = () => {
         </div>
         <div>
           <label className="block text-dimBlack font-medium mb-2">
-            answer:
+            Answer:
           </label>
           <textarea
             value={answer}
