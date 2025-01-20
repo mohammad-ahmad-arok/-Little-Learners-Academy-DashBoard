@@ -34,7 +34,7 @@ const ActivityCard: React.FC<IProps> = ({ id,image, name, description ,to,handle
 
   // Function To Handle Delete Item
   const handleClickDelete = () => {
-    dispatch(handleDelete(id as string));
+   dispatch(handleDelete(id as string));
     if (!error) {
       toast.success("item deleted successfully");
     } else {
