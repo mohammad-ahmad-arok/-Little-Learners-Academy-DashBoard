@@ -10,7 +10,7 @@ const updateMember = createAsyncThunk(
           `/api/team-members/${info.id}`,info.data
         );
         console.log(res.data);
-        return res.data.data;
+        return res.data;
       } catch (error) {
         if (axios.isAxiosError(error)) {
           return rejectWithValue(error.message);

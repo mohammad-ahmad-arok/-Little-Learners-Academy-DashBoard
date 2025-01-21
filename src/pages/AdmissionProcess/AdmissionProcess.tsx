@@ -19,17 +19,15 @@ const AdmissionProcess = () => {
   useEffect(() => {
     dispatch(getAllAdmissionProcess());
   }, [dispatch]);
-
-
   const navigate = useNavigate();
 
   // Function To Handle Delete Item
   const handleDelete = (id: string) => {
-    dispatch(deleteAdmissionProcess(id as string));
+    dispatch(deleteAdmissionProcess(id));
     if (!error) {
-      toast.success("item deleted successfully");
+      toast.success("Item deleted successfully");
     } else {
-      toast.error("try again");
+      toast.error("Try again");
     }
   };
 
@@ -37,15 +35,15 @@ const AdmissionProcess = () => {
     <MainContent status={isLoading} error={error} to="admissionProcess">
       <div>
         <div className="flex justify-center items-center w-full px-4">
-          <div className="w-full  bg-white shadow-lg rounded-lg overflow-hidden">
-            <table className=" divide-y divide-gray-200 w-full">
+          <div className="w-full bg-white shadow-lg rounded-lg overflow-hidden">
+            <table className="divide-y divide-gray-200 w-full">
               <thead className="bg-gray-50">
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    step
+                    Step
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    description
+                    Description
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Actions
@@ -54,22 +52,17 @@ const AdmissionProcess = () => {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {admissionProcess.map((item) => (
-                  <tr
-                    key={item._id}
-                    className="hover:bg-gray-50 transition-all"
-                  >
-                    <td className="px-6 py-4  text-sm font-medium text-gray-900">
+                  <tr key={item._id} className="hover:bg-gray-50 transition-all">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900">
                       {item.step}
                     </td>
-                    <td className="px-6 py-4  text-sm text-gray-500">
+                    <td className="px-6 py-4 text-sm text-gray-500">
                       {item.description}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm">
                       <div className="flex items-center gap-3">
                         <button
-                          onClick={() =>
-                            navigate(`/admissionProcess/update/${item._id}`)
-                          }
+                          onClick={() => navigate(`/admissionProcess/update/${item._id}`)}
                           className="px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-orange-500 transition-all"
                         >
                           Edit

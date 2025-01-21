@@ -16,50 +16,6 @@ const FAQPage: React.FC = () => {
     (state: RootState) => state.faqs
   );
   const dispatch = useDispatch<AppDispatch>();
-
-  // const [question, setQuestion] = useState("");
-  // const [answer, setAnswer] = useState("");
-  // const [editingFAQ, setEditingFAQ] = useState<{
-  //   _id: string;
-  //   question: string;
-  //   answer: string;
-  // } | null>(null);
-
-  // // fetch Faqs from redux
-  // useEffect(() => {
-  //   dispatch(fetchFAQs());
-  // }, [dispatch]);
-
-  // // Handle form submission for adding or updating faqs
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   if (editingFAQ) {
-  //     // Update faq
-  //     dispatch(editFAQ({ id: editingFAQ._id, faq: { question, answer } }));
-  //   } else {
-  //     // Add faq
-  //     dispatch(createFAQ({ question, answer }));
-  //   }
-
-  //   // Reset form
-  //   setQuestion("");
-  //   setAnswer("");
-  //   setEditingFAQ(null);
-  // };
-
-  // // Handle editing a faq
-  // const handleEdit = (faq: {
-  //   _id: string;
-  //   question: string;
-  //   answer: string;
-  // }) => {
-  //   setEditingFAQ(faq);
-  //   setQuestion(faq.question);
-  //   setAnswer(faq.answer);
-  // };
-
-  // // Handle deleting a faq
   const handleDelete = (id: string) => {
     dispatch(removeFAQ(id));
   };

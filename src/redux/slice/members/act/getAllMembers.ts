@@ -11,7 +11,7 @@ const getAllMembers = createAsyncThunk(
         );
   
 
-        return res.data.data;
+        return res.data;
       } catch (error) {
         if (axios.isAxiosError(error)) {
           return rejectWithValue(error.message);

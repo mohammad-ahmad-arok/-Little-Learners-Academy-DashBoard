@@ -1,12 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = "/api/specialfeatures";
+const BASE_URL = "https://little-learners-academy-back-end-j3iu.onrender.com/api/specialfeatures";
 
 // Fetch all special features
 export const fetchSpecialFeatures = createAsyncThunk("specialFeatures/fetch", async () => {
   const response = await axios.get(BASE_URL);
-  return response.data.data;
+  return response.data;
 });
 
 // Add a new special feature
@@ -16,7 +16,7 @@ export const addSpecialFeature = createAsyncThunk("specialFeatures/add", async (
       "Content-Type": "multipart/form-data",
     },
   });
-  return response.data.data;
+  return response.data;
 });
 
 // Edit a special feature
@@ -28,7 +28,7 @@ export const editSpecialFeature = createAsyncThunk(
         "Content-Type": "multipart/form-data",
       },
     });
-    return response.data.data;
+    return response.data;
   }
 );
 

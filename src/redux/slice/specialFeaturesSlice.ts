@@ -37,7 +37,7 @@ const specialFeaturesSlice = createSlice({
       })
       .addCase(fetchSpecialFeatures.fulfilled, (state, action) => {
         state.loading = false;
-        state.specialFeatures = action.payload || [];
+        state.specialFeatures = action.payload.data || [];
       })
       .addCase(fetchSpecialFeatures.rejected, (state, action) => {
         state.loading = false;
@@ -45,7 +45,7 @@ const specialFeaturesSlice = createSlice({
       })
       .addCase(addSpecialFeature.fulfilled, (state, action) => {
         if (action.payload && action.payload.data) {
-          state.specialFeatures.push(action.payload);
+          state.specialFeatures.push(action.payload.data);
         }
       })
       .addCase(editSpecialFeature.fulfilled, (state, action) => {

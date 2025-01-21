@@ -12,7 +12,7 @@ const addMember = createAsyncThunk(
 
         console.log(res.data)
   
-        return res.data.data;
+        return res.data;
       } catch (error) {
         if (axios.isAxiosError(error)) {
           return rejectWithValue(error.message);

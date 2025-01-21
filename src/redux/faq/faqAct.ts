@@ -1,19 +1,18 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Fetch FAQs
 export const fetchFAQs = createAsyncThunk("faqs/fetchFAQs", async () => {
-  const response = await axios.get("/api/commonquestions");
-  return response.data.data;
+  const response = await axios.get("https://little-learners-academy-back-end-j3iu.onrender.com/api/commonquestions");
+  return response.data.data; // Fix: extract `.data`
 });
+
 
 // Add 
 export const createFAQ = createAsyncThunk(
   "faqs/createFAQ",
   async (faq: { question: string; answer: string }) => {
-    const response = await axios.post("/api/commonquestions", faq);
-    console.log(response.data.data)
-    return response.data.data;
+    const response = await axios.post("https://little-learners-academy-back-end-j3iu.onrender.com/api/commonquestions", faq);
+    return response.data.data; // Fix: extract `.data`
   }
 );
 
@@ -21,12 +20,12 @@ export const createFAQ = createAsyncThunk(
 export const editFAQ = createAsyncThunk(
   "faqs/editFAQ",
   async ({ id, faq }: { id: string; faq: { question: string; answer: string } }) => {
-    const response = await axios.put(`/api/commonquestions/${id}`, faq);
-    return response.data.data;
+    const response = await axios.put(`https://little-learners-academy-back-end-j3iu.onrender.com/api/commonquestions/${id}`, faq);
+    return response.data.data; // Fix: extract `.data`
   }
 );
 
 export const removeFAQ = createAsyncThunk("faqs/removeFAQ", async (id: string) => {
-  await axios.delete(`/api/commonquestions/${id}`);
-  return id;
+  const response = await axios.delete(`https://little-learners-academy-back-end-j3iu.onrender.com/api/commonquestions/${id}`);
+  return id; // Deletion should return only the ID
 });

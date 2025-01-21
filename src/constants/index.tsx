@@ -25,6 +25,7 @@ import FeeStructures from "../pages/FeeStructures/FeeStructures";
 import Contact from "../pages/Contact/Contact";
 import { AdditionalServices } from "../pages/additionalServices/AdditionalServices";
 import StudentSupports from "../pages/StudentSupports/StudentSupports";
+import Events from "../pages/events/Events";
 
 export const DashBoardLinks = [
   {
@@ -118,6 +119,13 @@ export const DashBoardLinks = [
     icon: <GrServices />,
     childComponente: <AdditionalServices />,
   },
+  {
+    path: "/events",
+    label: "Events",
+    icon: <GrServices />,
+    childComponente: <Events />,
+  },
+
 ];
 
 // SiContactlesspayment
