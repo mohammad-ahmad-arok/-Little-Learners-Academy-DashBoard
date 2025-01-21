@@ -26,6 +26,7 @@ import Login from "./pages/login/Login";
 import ProtectedRoute from "./services/ProtectedRoute";
 import NotFound from "./pages/NotFound/NotFound";
 import StudentSupportForm from "./components/Forms/StudentSupportForm/StudentSupportForm";
+import AwardForm from "./components/Forms/‏‏AwardForm/AwardForm";
 
 function App() {
   return (
@@ -96,6 +97,23 @@ function App() {
             element={
               <NewItem>
                 <StudentSupportForm />
+              </NewItem>
+            }
+          />
+
+          <Route
+            path="/awards/update/:id"
+            element={
+              <NewItem>
+                <AwardForm />
+              </NewItem>
+            }
+          />
+          <Route
+            path="/awards/add"
+            element={
+              <NewItem>
+                <AwardForm />
               </NewItem>
             }
           />

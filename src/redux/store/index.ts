@@ -16,6 +16,7 @@ import authSlice from "../slice/auth/authSlice"
 import feeStructures from "../slice/feeStructureSlice";
 import StudentSupport from "../slice/studentSupport/studentSupportSlice"
 import messages from "../slice/messageSlice"
+import AwardSlice from "../slice/awards/awardSlice"
 export const store = configureStore({
   reducer: {
     testimonialSlice,
@@ -32,7 +33,8 @@ export const store = configureStore({
     admissionProcessSlice,
     eventSlice,
     StudentSupport,
-    messages
+    messages,
+    AwardSlice
   },
 });
 

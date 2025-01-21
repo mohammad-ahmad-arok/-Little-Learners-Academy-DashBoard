@@ -1,13 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const addActivity = createAsyncThunk(
-  "activities/add",
-  async (data: any, thunkAPI) => {
+const deleteAward = createAsyncThunk(
+  "awards/delete",
+  async (id: string, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const res = await axios.post("/api/activities", data);
-      return res.data.data;
+      const res = await axios.delete(`/api/awards/${id}`);
+      return id;
     } catch (error) {
       if (axios.isAxiosError(error)) {
         return rejectWithValue(error.response?.data?.message || "Error");
@@ -17,4 +17,4 @@ const addActivity = createAsyncThunk(
   }
 );
 
-export default addActivity;
+export default deleteAward;

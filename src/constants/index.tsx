@@ -26,7 +26,8 @@ import { BsClockHistory, BsFillHouseGearFill } from "react-icons/bs";
 import { GrServices } from "react-icons/gr";
 import { AdditionalServices } from "../pages/additionalServices/AdditionalServices";
 import { MdOutlineContactSupport, MdOutlineEvent, MdOutlineSportsEsports } from "react-icons/md";
-import { FaBook } from "react-icons/fa";
+import { FaAward, FaBook } from "react-icons/fa";
+import Awards from "../pages/Awards/Awards";
 
 export const DashBoardLinks = [
   {
@@ -113,6 +114,12 @@ export const DashBoardLinks = [
     label: "Rooms",
     icon: <BsFillHouseGearFill />,
     childComponente: <Rooms />,
+  },
+  {
+    path: "/awards",
+    label: "Awards",
+    icon: <FaAward />,
+    childComponente: <Awards />,
   },
   {
     path: "/additionalservices",

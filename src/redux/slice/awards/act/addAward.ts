@@ -1,12 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const addActivity = createAsyncThunk(
-  "activities/add",
+const addAward = createAsyncThunk(
+  "awards/add",
   async (data: any, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const res = await axios.post("/api/activities", data);
+      const res = await axios.post("/api/awards", data);
+      console.log(res.data)
       return res.data.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -17,4 +18,4 @@ const addActivity = createAsyncThunk(
   }
 );
 
-export default addActivity;
+export default addAward;
