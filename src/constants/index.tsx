@@ -1,31 +1,32 @@
 import Benefits from "../pages/benefits/Benefits";
 import Testimonials from "../pages/testimonials/Testimonials";
 import Faq from "../pages/FAQ/Faq";
-import Login from "../pages/login/Login";
-import { SiBentobox, SiContactlesspayment } from "react-icons/si";
-import { SiLibreofficewriter } from "react-icons/si";
-import { FaPersonCircleQuestion } from "react-icons/fa6";
-import { GrOverview } from "react-icons/gr";
-import { FaUserTie } from "react-icons/fa6";
+import Subjects from "../pages/subjects/Subjects";
+import Activities from "../pages/Activities/Activities";
+import FeeStructures from "../pages/FeeStructures/FeeStructures";
+import Contact from "../pages/Contact/Contact";
+import StudentSupports from "../pages/StudentSupports/StudentSupports";
+import Events from "../pages/events/Events";
 import MissionVision from "../pages/mission-vision/MissionVision";
 import Members from "../pages/Member/Members";
 import History from "../pages/history/History";
 import SpecialFeatures from "../pages/specialfeatures/AddEditSpecialFeature";
 import AdmissionProcess from "../pages/AdmissionProcess/AdmissionProcess";
-import { LuBookOpenCheck } from "react-icons/lu";
-import { BsFillHouseGearFill } from "react-icons/bs";
-import { GrServices } from "react-icons/gr";
 import Rooms from "../pages/rooms/Rooms";
 
-import Subjects from "../pages/subjects/Subjects";
-import Activities from "../pages/Activities/Activities";
-import { FaBook } from "react-icons/fa";
 
-import FeeStructures from "../pages/FeeStructures/FeeStructures";
-import Contact from "../pages/Contact/Contact";
+// Icons
+import { SiBentobox, SiContactlesspayment } from "react-icons/si";
+import { SiLibreofficewriter } from "react-icons/si";
+import { FaPersonCircleQuestion } from "react-icons/fa6";
+import { GrOverview } from "react-icons/gr";
+import { FaUserTie } from "react-icons/fa6";
+import { LuBookOpenCheck } from "react-icons/lu";
+import { BsClockHistory, BsFillHouseGearFill } from "react-icons/bs";
+import { GrServices } from "react-icons/gr";
 import { AdditionalServices } from "../pages/additionalServices/AdditionalServices";
-import StudentSupports from "../pages/StudentSupports/StudentSupports";
-import Events from "../pages/events/Events";
+import { MdOutlineContactSupport, MdOutlineEvent, MdOutlineSportsEsports } from "react-icons/md";
+import { FaBook } from "react-icons/fa";
 
 export const DashBoardLinks = [
   {
@@ -44,7 +45,7 @@ export const DashBoardLinks = [
   {
     path: "student-support",
     label: "StudentSupports",
-    icon: <SiLibreofficewriter />,
+    icon: <MdOutlineContactSupport />,
     childComponente: <StudentSupports />,
   },
   {
@@ -56,7 +57,7 @@ export const DashBoardLinks = [
   {
     path: "history",
     label: "history",
-    icon: <SiBentobox />,
+    icon: <BsClockHistory />,
     childComponente: <History />,
   },
   {
@@ -92,13 +93,13 @@ export const DashBoardLinks = [
   {
     path: "subjects",
     label: "Subjects",
-    icon: <FaBook />,
+    icon: <FaBook/>,
     childComponente: <Subjects />,
   },
   {
     path: "activities",
     label: "Activities",
-    icon: <FaBook />,
+    icon: <MdOutlineSportsEsports />,
     childComponente: <Activities />,
   },
   {
@@ -122,7 +123,7 @@ export const DashBoardLinks = [
   {
     path: "/events",
     label: "Events",
-    icon: <GrServices />,
+    icon: <MdOutlineEvent />,
     childComponente: <Events />,
   },
 
