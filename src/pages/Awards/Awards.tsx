@@ -19,7 +19,7 @@ const Awards: React.FC = () => {
 
   // Info From Slice
   const { records, isLoading, error } = useAppSelector(
-    (state) => state.activitySlice
+    (state) => state.AwardSlice
   );
 
 
