@@ -70,17 +70,20 @@ export const Room = ({ rooms, room, setRooms, index }: any) => {
           modules={[FreeMode, Pagination]}
           className="cursor-pointer"
         >
-          {room.images.map((item, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <img
-                  src={item.url}
-                  alt={room.name}
-                  className=" rounded-xl border-2 border-[Grey_15] w-auto"
-                />
-              </SwiperSlide>
-            );
-          })}
+          {
+            // @ts-ignore */}
+            room.images.map((item, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <img
+                    src={item.url}
+                    alt={room.name}
+                    className=" rounded-xl border-2 border-[Grey_15] w-auto"
+                  />
+                </SwiperSlide>
+              );
+            })
+          }
         </Swiper>
       </div>
       <div

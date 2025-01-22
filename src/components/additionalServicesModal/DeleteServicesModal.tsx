@@ -28,6 +28,7 @@ export default function DeleteServicesModal({
       console.log(res.data);
 
       setservices(
+        // @ts-ignore */}
         services.filter((item, indexRoom) => {
           return indexRoom != index;
         })

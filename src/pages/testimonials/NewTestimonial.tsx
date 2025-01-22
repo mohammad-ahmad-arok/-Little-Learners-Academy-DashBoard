@@ -1,26 +1,24 @@
 // Router-Dom
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 // Styles
-import styles from "../../components/dashboardNav/header.module.css"
+import styles from "../../components/dashboardNav/header.module.css";
 // Component
-import TestimonialForm from "../../components/TestimonialForm/TestimonialForm";
+import TestimonialForm from "../../components/Forms/TestimonialForm/TestimonialForm";
 
-
-const NewTestimonial:React.FC = () => {
-  const navigate=useNavigate();
+const NewTestimonial: React.FC = () => {
+  const navigate = useNavigate();
   // Function To Handle Back Button
-  const clickedHandler=()=>{
-    navigate(-1); 
-  }
+  const clickedHandler = () => {
+    navigate(-1);
+  };
   return (
     <div className="p-11">
       <button className={`${styles.btn} mb-4`} onClick={clickedHandler}>
-         BACK
+        BACK
       </button>
-       <TestimonialForm/>
-
+      <TestimonialForm />
     </div>
-  )
-}
+  );
+};
 
-export default NewTestimonial
+export default NewTestimonial;

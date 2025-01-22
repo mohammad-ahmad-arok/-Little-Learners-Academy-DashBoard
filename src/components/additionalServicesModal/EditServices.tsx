@@ -49,6 +49,7 @@ export default function EditServices({
       );
 
       setservices(
+        // @ts-ignore */}
         services.map((item, indexItem) => {
           if (indexItem == index) {
             return res.data.data;

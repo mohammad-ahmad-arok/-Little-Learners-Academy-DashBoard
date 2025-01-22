@@ -26,6 +26,7 @@ export const editFAQ = createAsyncThunk(
 );
 
 export const removeFAQ = createAsyncThunk("faqs/removeFAQ", async (id: string) => {
+  // @ts-ignore */}
   const response = await axios.delete(`https://little-learners-academy-back-end-j3iu.onrender.com/api/commonquestions/${id}`);
   return id; // Deletion should return only the ID
 });

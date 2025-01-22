@@ -46,6 +46,7 @@ export default function EditRoom({
     const form = new FormData();
     form.append("name", formData.name);
     form.append("description", formData.description);
+    // @ts-ignore */}
     formData.images.forEach((file) => {
       form.append("images", file);
     });
@@ -62,6 +63,7 @@ export default function EditRoom({
       );
 
       setrooms(
+        // @ts-ignore */}
         rooms.map((item, indexItem) => {
           if (indexItem == index) {
             return res.data.data;

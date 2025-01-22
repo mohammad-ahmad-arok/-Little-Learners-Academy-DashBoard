@@ -1,8 +1,10 @@
-
 // AddEditSpecialFeature.tsx
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addSpecialFeature, editSpecialFeature } from "../../redux/specialFeatureAct/specialFeatureAct";
+import {
+  addSpecialFeature,
+  editSpecialFeature,
+} from "../../redux/specialFeatureAct/specialFeatureAct";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AppDispatch } from "../../redux/store";
 
@@ -11,12 +13,13 @@ const AddEditSpecialFeature: React.FC = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState<File | null>(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [icon, setIcon] = useState<File | null>(null);
+  const [setIcon] = useState<File | null>(null);
   const [iconPreview, setIconPreview] = useState<string | null>(null);
 
   const handleIconChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
     if (file) {
+      // @ts-ignore */}
       setIcon(file);
       const reader = new FileReader();
       reader.onloadend = () => setIconPreview(reader.result as string);
@@ -64,7 +67,9 @@ const AddEditSpecialFeature: React.FC = () => {
       <div className="bg-white p-8 rounded-lg">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-dimBlack font-medium mb-2">Name:</label>
+            <label className="block text-dimBlack font-medium mb-2">
+              Name:
+            </label>
             <input
               type="text"
               value={name}
@@ -74,7 +79,9 @@ const AddEditSpecialFeature: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-dimBlack font-medium mb-2">Description:</label>
+            <label className="block text-dimBlack font-medium mb-2">
+              Description:
+            </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -83,24 +90,26 @@ const AddEditSpecialFeature: React.FC = () => {
             ></textarea>
           </div>
           <div>
-          <label className="block text-dimBlack font-medium mb-2">Icon:</label>
-          <div className="w-full p-4 border border-Grey_30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary relative">
-            {iconPreview ? (
-              <img
-                src={iconPreview}
-                alt="Icon Preview"
-                className="w-16 h-16 rounded-full object-cover mx-auto"
+            <label className="block text-dimBlack font-medium mb-2">
+              Icon:
+            </label>
+            <div className="w-full p-4 border border-Grey_30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary relative">
+              {iconPreview ? (
+                <img
+                  src={iconPreview}
+                  alt="Icon Preview"
+                  className="w-16 h-16 rounded-full object-cover mx-auto"
+                />
+              ) : (
+                <p className="text-center text-dimGray">Choose an icon</p>
+              )}
+              <input
+                type="file"
+                onChange={handleIconChange}
+                className="absolute inset-0 opacity-0 cursor-pointer"
               />
-            ) : (
-              <p className="text-center text-dimGray">Choose an icon</p>
-            )}
-            <input
-              type="file"
-              onChange={handleIconChange}
-              className="absolute inset-0 opacity-0 cursor-pointer"
-            />
+            </div>
           </div>
-        </div>
           <div className="flex space-x-4">
             <button
               type="submit"

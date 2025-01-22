@@ -2,7 +2,7 @@
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 // Styles
-import styles from "../../styles"
+import styles from "../../styles";
 
 // Router-Dom
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 // Thunk
-import { deleteTestimonial } from "../../redux/slice/testimonials/testimonialSlice"; 
+import { deleteTestimonial } from "../../redux/slice/testimonials/testimonialSlice";
 
 // Component
 import Modal from "../Modal/Modal";
@@ -24,14 +24,13 @@ import toast from "react-hot-toast";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-
 // Types
 interface TestimonialsCardProps {
   image?: string;
   name?: string;
-  evaluation: number;
+  evaluation: number | string;
   description?: string;
-  id?:string
+  id?: string;
 }
 
 // For Renderign Stars In Component
@@ -58,41 +57,42 @@ const TestimonialsCard: React.FC<TestimonialsCardProps> = ({
   description,
   name,
   evaluation,
-  id
+  id,
 }) => {
-
   // State For Modal To Open And Close
-  const [open,setOpen]=useState(false)
+  const [open, setOpen] = useState(false);
 
-  // Check Error From Slice  
-  const {error}=useAppSelector(state=>state.testimonialSlice)
+  // Check Error From Slice
+  const { error } = useAppSelector((state) => state.testimonialSlice);
 
-
-  const dispatch=useAppDispatch()
-  const navigate=useNavigate();
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   // Function To Handle Navigation To Update Page
-  const handleClickUpdate = ()=>{
-    navigate(`/testimonials/update/${id}`)
- 
-  }
+  const handleClickUpdate = () => {
+    navigate(`/testimonials/update/${id}`);
+  };
 
-  // Function To Handle Delete Item 
-  const handleClickDelete=()=>{
-      dispatch(deleteTestimonial(id as string));
-      if(!error){
-        toast.success("item deleted successfully")
-      }
-      else{
-        toast.error("try again")
-      }
-  }
+  // Function To Handle Delete Item
+  const handleClickDelete = () => {
+    dispatch(deleteTestimonial(id as string));
+    if (!error) {
+      toast.success("item deleted successfully");
+    } else {
+      toast.error("try again");
+    }
+  };
 
   return (
-    <div className={`TestimonialsCard ${styles.cardStyle} xs:p-4 md:p-12  h-full`}>
+    <div
+      className={`TestimonialsCard ${styles.cardStyle} xs:p-4 md:p-12  h-full`}
+    >
       <div className="flex justify-end items-center  gap-3 mb-2">
-       <button className="text-4xl  text-white hover:bg-red-400 bg-[#FF8D4C] p-2 rounded-lg"  onClick={handleClickUpdate}>
-          <MdEdit/>
+        <button
+          className="text-4xl  text-white hover:bg-red-400 bg-[#FF8D4C] p-2 rounded-lg"
+          onClick={handleClickUpdate}
+        >
+          <MdEdit />
         </button>
         <button
           onClick={() => {
@@ -100,7 +100,7 @@ const TestimonialsCard: React.FC<TestimonialsCardProps> = ({
           }}
           className="text-4xl text-white hover:bg-red-400 bg-red-600 p-2 rounded-lg"
         >
-          <RiDeleteBin6Line/>
+          <RiDeleteBin6Line />
         </button>
       </div>
       <div className="profile text-center">
@@ -120,9 +120,12 @@ const TestimonialsCard: React.FC<TestimonialsCardProps> = ({
         </p>
       </div>
 
-
-       {/* Modal Component To Show When Click On Delete Button */}
-       <Modal open={open} onClose={() => setOpen(false)} handleClickDelete={handleClickDelete}/>
+      {/* Modal Component To Show When Click On Delete Button */}
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        handleClickDelete={handleClickDelete}
+      />
     </div>
   );
 };

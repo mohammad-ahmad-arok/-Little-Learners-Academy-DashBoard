@@ -1,11 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  fetchFAQs,
-  createFAQ,
-  editFAQ,
-  removeFAQ,
-} from "../../redux/faq/faqAct";
+import { removeFAQ } from "../../redux/faq/faqAct";
 import { RootState, AppDispatch } from "../../redux/store";
 import Loading from "../../components/common/Loading/Loading";
 import { useNavigate } from "react-router-dom";

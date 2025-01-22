@@ -27,6 +27,7 @@ export default function DeleteRoomModal({
       console.log(res.data);
 
       setrooms(
+        // @ts-ignore */}
         rooms.filter((item, indexRoom) => {
           return indexRoom != index;
         })

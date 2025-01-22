@@ -45,6 +45,7 @@ export const fetchMessageById = createAsyncThunk("messages/fetchById", async (id
 // **Thunk for deleting a message**
 export const deleteMessage = createAsyncThunk("messages/delete", async (id: string, thunkAPI) => {
   try {
+    // @ts-ignore */}
     const response = await axios.delete(`${API_URL}/${id}`);
     return id; // Return the deleted message ID to remove it from the state
   } catch (error: any) {

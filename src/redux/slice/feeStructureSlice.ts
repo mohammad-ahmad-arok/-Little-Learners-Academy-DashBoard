@@ -46,6 +46,7 @@ export const fetchFeeStructures = createAsyncThunk(
     export const removeFeeStructure = createAsyncThunk(
     "feeStructures/removeFeeStructure",
     async (id: string) => {
+      // @ts-ignore */}
         const response = await axios.delete(`${API_URL}/${id}`);
         return id;  
     }

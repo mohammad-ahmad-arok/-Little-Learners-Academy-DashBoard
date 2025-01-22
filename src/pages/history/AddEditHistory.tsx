@@ -17,7 +17,7 @@ const AddEditHistory: React.FC = () => {
   // Check if we're editing an existing history
   useEffect(() => {
     if (location.state) {
-      const { _id, year, title, description } = location.state;
+      const { year, title, description } = location.state;
       setIsEditing(true);
       setYear(year);
       setTitle(title);
@@ -40,7 +40,7 @@ const AddEditHistory: React.FC = () => {
     setYear(0);
     setTitle("");
     setDescription("");
-    navigate("/history");  // Redirect back to the history page after submission
+    navigate("/history"); // Redirect back to the history page after submission
   };
 
   return (
@@ -54,7 +54,9 @@ const AddEditHistory: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Year Input */}
             <div>
-              <label className="block text-dimBlack font-medium mb-2">Year:</label>
+              <label className="block text-dimBlack font-medium mb-2">
+                Year:
+              </label>
               <input
                 type="number"
                 value={year}
@@ -66,7 +68,9 @@ const AddEditHistory: React.FC = () => {
 
             {/* Title Input */}
             <div>
-              <label className="block text-dimBlack font-medium mb-2">Title:</label>
+              <label className="block text-dimBlack font-medium mb-2">
+                Title:
+              </label>
               <input
                 type="text"
                 value={title}
@@ -79,7 +83,9 @@ const AddEditHistory: React.FC = () => {
 
           {/* Description Input */}
           <div>
-            <label className="block text-dimBlack font-medium mb-2">Description:</label>
+            <label className="block text-dimBlack font-medium mb-2">
+              Description:
+            </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
