@@ -113,7 +113,13 @@ const TestimonialsCard: React.FC<TestimonialsCardProps> = ({
           {name}
         </span>
       </div>
-      <div className="reate w-full md:py-7 py-5">{renderStars(evaluation)}</div>
+
+      <div className="reate w-full md:py-7 py-5">
+        {
+          // @ts-ignore */}
+          renderStars(evaluation)
+        }
+      </div>
       <div className="">
         <p className="text-Grey_20 text-center font-medium md:text-[20px] text-[16px]">
           {description}

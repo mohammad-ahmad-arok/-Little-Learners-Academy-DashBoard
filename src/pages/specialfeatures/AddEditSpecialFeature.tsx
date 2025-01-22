@@ -32,7 +32,7 @@ const AddEditSpecialFeature: React.FC = () => {
 
   useEffect(() => {
     if (location.state) {
-      const { _id, name, description } = location.state;
+      const { name, description } = location.state;
       setIsEditing(true);
       setName(name);
       setDescription(description);
